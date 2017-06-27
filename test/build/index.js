@@ -10605,7 +10605,7 @@ __WEBPACK_IMPORTED_MODULE_0_tape___default()("Invalid data", function (t) {
 "use strict";
 var cov_swusbcnba = function () {
 	var path = "/home/forceuser/Projects/seq/src/index.js",
-	    hash = "86ff026aae12685059cd802132daa180a756e5fe",
+	    hash = "143f914543fd572def9b2155c3260f1892518cda",
 	    global = new Function('return this')(),
 	    gcv = "__coverage__",
 	    coverageData = {
@@ -11539,6 +11539,16 @@ var cov_swusbcnba = function () {
 				end: {
 					line: 157,
 					column: 15
+				}
+			},
+			"93": {
+				start: {
+					line: 160,
+					column: 0
+				},
+				end: {
+					line: 160,
+					column: 21
 				}
 			}
 		},
@@ -13154,7 +13164,8 @@ var cov_swusbcnba = function () {
 			"89": 0,
 			"90": 0,
 			"91": 0,
-			"92": 0
+			"92": 0,
+			"93": 0
 		},
 		f: {
 			"0": 0,
@@ -13553,6 +13564,9 @@ function sqnc(from, to) {
 	++cov_swusbcnba.s[92];
 	return result;
 }
+
+++cov_swusbcnba.s[93];
+sqnc.maxSize = 65536;
 
 /* harmony default export */ __webpack_exports__["a"] = (sqnc);
 
