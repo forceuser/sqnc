@@ -5,13 +5,13 @@ const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
 
 module.exports = {
 	entry: {
-		"active-data": path.resolve(__dirname, "../src/cjs-entry.js"),
-    	"active-data.min": path.resolve(__dirname, "../src/cjs-entry.js")
+		"sqnc": path.resolve(__dirname, "../src/cjs-entry.js"),
+    	"sqnc.min": path.resolve(__dirname, "../src/cjs-entry.js")
 	},
 	output: {
 		path: path.resolve(__dirname, "../dist"),
 		filename: "[name].js",
-		library: "activeData",
+		library: "sqnc",
 		libraryTarget: "umd"
 	},
 	devtool: "source-map",
