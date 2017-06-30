@@ -1,6 +1,6 @@
 {
 	"name": "sqnc",
-	"version": "1.0.5",
+	"version": "1.0.6",
 	"description": "Numeric and symbolic sequence generator, with utf16 support",
 	"main": "dist/sqnc.js",
 	"module": "index.js",
