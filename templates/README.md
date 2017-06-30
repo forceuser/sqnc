@@ -1,6 +1,6 @@
 # sqnc | [![Build Status](https://travis-ci.org/forceuser/sqnc.svg?branch=master)](https://travis-ci.org/forceuser/sqnc) [![Coverage Status](https://img.shields.io/codecov/c/github/forceuser/sqnc/master.svg)](https://codecov.io/gh/forceuser/sqnc) [![npm repository](https://img.shields.io/npm/v/sqnc.svg)](https://www.npmjs.com/package/sqnc)
 
-Tiny and convenient reactive data manager, inspired by MobX. Automatically detects associated data and performs updates to your views or everything dependent on that data when it changes. Implemented with javascript Proxy objects
+Utility for numeric or symbolic seqence generation. Specify range of values, step or custom function to create array with seqence
 
 ## Installation
 
@@ -30,3 +30,15 @@ And then use **sqnc** as global variable
 ## [Documentation](./DOCUMENTATION.md)
 
 ## Example
+
+```js
+const sqnc = require("sqnc");
+
+console.log(sqnc("A", "Z")); // Alphabet
+console.log(sqnc("👶", "👰")); // Some emojis
+console.log(sqnc(25, 0, 5)); // From 25 to 0 with step 5
+console.log(sqnc("☠", null, null, 5)); // Make Array(5) of Skull and bones symbol
+console.log(sqnc(n => Math.pow(2, n), 10)); // Power of 2 sequence
+console.log(sqnc((n, v, r) => n > 1 ? r[n - 1] + r[n - 2] : 1, 20)); // Fibonacci number sequence
+console.log(sqnc(1, 20, n => n % 2 ? 1 : 2)); // Using step function
+```
