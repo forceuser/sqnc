@@ -1,59 +1,67 @@
-function compare (a, b) {
-	if (Array.isArray(a) && Array.isArray(b)) {
-		const l = Math.max(a.length, b.length);
-		const sa = l - a.length;
-		const sb = l - b.length;
-		for (let i = 0; i < l; i++) {
-			const av = i >= sa ? a[i - sa] : 0;
-			const bv = i >= sb ? b[i - sb] : 0;
-			if (av > bv) {
-				return 1;
-			}
-			else if (av < bv) {
-				return -1;
-			}
-		}
-		return 0;
-	}
-	else {
-		return a > b ? 1 : a < b ? -1 : 0;
-	}
-}
-
 function isInt (n) {
 	return n % 1 === 0;
 }
 
+function isFiniteNumber (value) {
+	return Number(value) === value && isFinite(value);
+}
+
+const UTF16MAX = 65536;
+
+function StringToUTF16Array (val) {
+	return val.split("").map(c => c.charCodeAt(0));
+}
+
+function UTF16ArrayToString (val) {
+	return String.fromCharCode.apply(null, val);
+}
+
+function UTF16ArrayToDec (val) {
+	let res = 0;
+	let n = 0;
+	for (let i = val.length - 1; i >= 0; i--) {
+		res += val[i] * Math.pow(UTF16MAX, n);
+		n++;
+	}
+	return res;
+}
+
+function DecToUTF16Array (val) {
+	const res = [];
+	while (val) {
+		const p = val % UTF16MAX;
+		res.unshift(p);
+		val = Math.floor(val / UTF16MAX);
+	}
+	return res;
+}
+
+function getCount (a, b) {
+	if (Array.isArray(a) && Array.isArray(b)) {
+		a = UTF16ArrayToDec(a);
+		b = UTF16ArrayToDec(b);
+	}
+	return Math.abs(a - b);
+}
+
+function compare (a, b) {
+	if (Array.isArray(a) && Array.isArray(b)) {
+		a = UTF16ArrayToDec(a);
+		b = UTF16ArrayToDec(b);
+	}
+	return a > b ? 1 : a < b ? -1 : 0;
+}
 
 function inc (val, count = 1) {
 	if (Array.isArray(val)) {
-		const MAX = 65536;
-		let i = count;
-		for (let p = val.length - 1; p >= 0; p--) {
-			const res = val[p] + i;
-			val[p] = res % MAX;
-			if (val[p] < 0) {
-				val[p] = MAX + val[p];
-			}
-			val[p] = Math.abs(val[p]);
-			i = Math.floor(res / MAX);
-		}
-		if (i > 0) {
-			val.unshift(i);
-		}
-		return val;
+		return DecToUTF16Array(UTF16ArrayToDec(val) + count);
 	}
 	else {
 		return val + count;
 	}
 }
 
-
 function sqnc (from, to, step = 1, count) {
-	function isFiniteNumber (value) {
-		return Number(value) === value && isFinite(value);
-	}
-
 	const result = [];
 
 	if (typeof from === "function" && isFinite(to)) {
@@ -65,7 +73,7 @@ function sqnc (from, to, step = 1, count) {
 		return result;
 	}
 
-	if (to != null) {
+	if (to != null && count != null) {
 		count = null;
 		console.warn(`"count" argument is ignored when "to" argument is specified`);
 	}
@@ -76,7 +84,7 @@ function sqnc (from, to, step = 1, count) {
 		const initial = from;
 
 		if (typeof from === "string") {
-			from = from.split("").map(s => s.charCodeAt(0));
+			from = StringToUTF16Array(from);
 			chars = true;
 			if (step && typeof step !== "function" && !isInt(step)) {
 				throw new Error("Step should be integer when characters are used");
@@ -87,6 +95,10 @@ function sqnc (from, to, step = 1, count) {
 			if (count === 0) {
 				throw new Error("count can't be zero!");
 			}
+			if (count > sqnc.maxLength) {
+				throw new Error(`length of the generated squence cant't be bigger then ${sqnc.maxLength} (you can change it: sqnc.maxLength = <max seqence length>)`);
+			}
+
 			if (!isFiniteNumber(count)) {
 				throw new Error("count should be a number!");
 			}
@@ -110,7 +122,7 @@ function sqnc (from, to, step = 1, count) {
 				let n = 0;
 				while (c) {
 					n++;
-					result.push(chars ? String.fromCharCode.apply(null, val) : val);
+					result.push(chars ? UTF16ArrayToString(val) : val);
 					val = inc(val, typeof step === "function" ? step(n, val) : step);
 					c--;
 				}
@@ -118,7 +130,7 @@ function sqnc (from, to, step = 1, count) {
 		}
 		else {
 			if (typeof to === "string") {
-				to = to.split("").map(s => s.charCodeAt(0));
+				to = StringToUTF16Array(to);
 				chars = true;
 			}
 
@@ -129,6 +141,11 @@ function sqnc (from, to, step = 1, count) {
 			) {
 				throw new Error("arguments should be finite!");
 			}
+
+			if (getCount(from, to) > sqnc.maxLength) {
+				throw new Error(`length of the generated squence cant't be bigger then ${sqnc.maxLength} (you can change it: sqnc.maxLength = <max seqence length>)`);
+			}
+
 			if (typeof step !== "function") {
 				step = Math.abs(step);
 				if (step === 0) {
@@ -149,14 +166,23 @@ function sqnc (from, to, step = 1, count) {
 			let val = from;
 			while (check(val)) {
 				n++;
-				result.push(chars ? String.fromCharCode.apply(null, val) : val);
+				result.push(chars ? UTF16ArrayToString(val) : val);
 				val = inc(val, dir * (typeof step === "function" ? step(n, val, result) : step));
 			}
 		}
 	}
 	return result;
 }
-
-sqnc.maxSize = 65536;
+sqnc.maxLength = UTF16MAX;
+sqnc.utils = {
+	inc,
+	compare,
+	isInt,
+	isFiniteNumber,
+	StringToUTF16Array,
+	UTF16ArrayToString,
+	DecToUTF16Array,
+	UTF16ArrayToDec
+};
 
 export default sqnc;

@@ -59,9 +59,23 @@ test(`Invalid data`, t => {
 	t.throws(() => sqnc(1, null, null, 0));
 	t.throws(() => sqnc(1, null, null, NaN));
 	t.throws(() => sqnc("a", "z", 1.5));
+	let warnMessage;
+	sinon.stub(console, "warn", message => warnMessage = message);
 	t.throws(() => sqnc(false, "z", 1, 5));
+	t.equal(warnMessage, `"count" argument is ignored when "to" argument is specified`);
 	t.throws(() => sqnc(1, 5, 0));
 	t.throws(() => sqnc(false, null, 1, 5));
+	t.throws(() => sqnc(0, sqnc.maxLength + 1));
+	t.throws(() => sqnc(0, null, null, sqnc.maxLength + 1));
 	t.deepEqual(sqnc(3), []);
+	t.end();
+});
+
+test(`Utils`, t => {
+	const utf16array = sqnc.utils.StringToUTF16Array("👰");
+	t.deepEqual(sqnc.utils.DecToUTF16Array(sqnc.utils.UTF16ArrayToDec(utf16array)), utf16array);
+	t.deepEqual(sqnc.utils.DecToUTF16Array(256 * 256), [1, 0]);
+	t.equal(sqnc.utils.inc(1), 2);
+	t.equal(sqnc.utils.inc(1, -1), 0);
 	t.end();
 });

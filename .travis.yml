@@ -8,7 +8,7 @@ cache:
     - node_modules
 
 before_install:
-  - 'npm i -g npm@latest'
+  - 'npm i -g npm@latest-4'
 
 after_success:
   - 'npm run coverage'

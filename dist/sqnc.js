@@ -82,49 +82,67 @@ return /******/ (function(modules) { // webpackBootstrap
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-function compare(a, b) {
-	if (Array.isArray(a) && Array.isArray(b)) {
-		var l = Math.max(a.length, b.length);
-		var sa = l - a.length;
-		var sb = l - b.length;
-		for (var i = 0; i < l; i++) {
-			var av = i >= sa ? a[i - sa] : 0;
-			var bv = i >= sb ? b[i - sb] : 0;
-			if (av > bv) {
-				return 1;
-			} else if (av < bv) {
-				return -1;
-			}
-		}
-		return 0;
-	} else {
-		return a > b ? 1 : a < b ? -1 : 0;
-	}
-}
-
 function isInt(n) {
 	return n % 1 === 0;
+}
+
+function isFiniteNumber(value) {
+	return Number(value) === value && isFinite(value);
+}
+
+var UTF16MAX = 65536;
+
+function StringToUTF16Array(val) {
+	return val.split("").map(function (c) {
+		return c.charCodeAt(0);
+	});
+}
+
+function UTF16ArrayToString(val) {
+	return String.fromCharCode.apply(null, val);
+}
+
+function UTF16ArrayToDec(val) {
+	var res = 0;
+	var n = 0;
+	for (var i = val.length - 1; i >= 0; i--) {
+		res += val[i] * Math.pow(UTF16MAX, n);
+		n++;
+	}
+	return res;
+}
+
+function DecToUTF16Array(val) {
+	var res = [];
+	while (val) {
+		var p = val % UTF16MAX;
+		res.unshift(p);
+		val = Math.floor(val / UTF16MAX);
+	}
+	return res;
+}
+
+function getCount(a, b) {
+	if (Array.isArray(a) && Array.isArray(b)) {
+		a = UTF16ArrayToDec(a);
+		b = UTF16ArrayToDec(b);
+	}
+	return Math.abs(a - b);
+}
+
+function compare(a, b) {
+	if (Array.isArray(a) && Array.isArray(b)) {
+		a = UTF16ArrayToDec(a);
+		b = UTF16ArrayToDec(b);
+	}
+	return a > b ? 1 : a < b ? -1 : 0;
 }
 
 function inc(val) {
 	var count = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
 
 	if (Array.isArray(val)) {
-		var MAX = 65536;
-		var i = count;
-		for (var p = val.length - 1; p >= 0; p--) {
-			var res = val[p] + i;
-			val[p] = res % MAX;
-			if (val[p] < 0) {
-				val[p] = MAX + val[p];
-			}
-			val[p] = Math.abs(val[p]);
-			i = Math.floor(res / MAX);
-		}
-		if (i > 0) {
-			val.unshift(i);
-		}
-		return val;
+		return DecToUTF16Array(UTF16ArrayToDec(val) + count);
 	} else {
 		return val + count;
 	}
@@ -133,10 +151,6 @@ function inc(val) {
 function sqnc(from, to) {
 	var step = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1;
 	var count = arguments[3];
-
-	function isFiniteNumber(value) {
-		return Number(value) === value && isFinite(value);
-	}
 
 	var result = [];
 
@@ -149,7 +163,7 @@ function sqnc(from, to) {
 		return result;
 	}
 
-	if (to != null) {
+	if (to != null && count != null) {
 		count = null;
 		console.warn("\"count\" argument is ignored when \"to\" argument is specified");
 	}
@@ -160,9 +174,7 @@ function sqnc(from, to) {
 		var initial = from;
 
 		if (typeof from === "string") {
-			from = from.split("").map(function (s) {
-				return s.charCodeAt(0);
-			});
+			from = StringToUTF16Array(from);
 			chars = true;
 			if (step && typeof step !== "function" && !isInt(step)) {
 				throw new Error("Step should be integer when characters are used");
@@ -173,6 +185,10 @@ function sqnc(from, to) {
 			if (count === 0) {
 				throw new Error("count can't be zero!");
 			}
+			if (count > sqnc.maxLength) {
+				throw new Error("length of the generated squence cant't be bigger then " + sqnc.maxLength + " (you can change it: sqnc.maxLength = <max seqence length>)");
+			}
+
 			if (!isFiniteNumber(count)) {
 				throw new Error("count should be a number!");
 			}
@@ -195,22 +211,25 @@ function sqnc(from, to) {
 				var _n = 0;
 				while (c) {
 					_n++;
-					result.push(chars ? String.fromCharCode.apply(null, _val) : _val);
+					result.push(chars ? UTF16ArrayToString(_val) : _val);
 					_val = inc(_val, typeof step === "function" ? step(_n, _val) : step);
 					c--;
 				}
 			}
 		} else {
 			if (typeof to === "string") {
-				to = to.split("").map(function (s) {
-					return s.charCodeAt(0);
-				});
+				to = StringToUTF16Array(to);
 				chars = true;
 			}
 
 			if (!Array.isArray(from) && !isFiniteNumber(from) || !Array.isArray(to) && !isFiniteNumber(to) || !isFiniteNumber(step) && typeof step !== "function") {
 				throw new Error("arguments should be finite!");
 			}
+
+			if (getCount(from, to) > sqnc.maxLength) {
+				throw new Error("length of the generated squence cant't be bigger then " + sqnc.maxLength + " (you can change it: sqnc.maxLength = <max seqence length>)");
+			}
+
 			if (typeof step !== "function") {
 				step = Math.abs(step);
 				if (step === 0) {
@@ -234,15 +253,24 @@ function sqnc(from, to) {
 			var _val2 = from;
 			while (check(_val2)) {
 				_n2++;
-				result.push(chars ? String.fromCharCode.apply(null, _val2) : _val2);
+				result.push(chars ? UTF16ArrayToString(_val2) : _val2);
 				_val2 = inc(_val2, dir * (typeof step === "function" ? step(_n2, _val2, result) : step));
 			}
 		}
 	}
 	return result;
 }
-
-sqnc.maxSize = 65536;
+sqnc.maxLength = UTF16MAX;
+sqnc.utils = {
+	inc: inc,
+	compare: compare,
+	isInt: isInt,
+	isFiniteNumber: isFiniteNumber,
+	StringToUTF16Array: StringToUTF16Array,
+	UTF16ArrayToString: UTF16ArrayToString,
+	DecToUTF16Array: DecToUTF16Array,
+	UTF16ArrayToDec: UTF16ArrayToDec
+};
 
 /* harmony default export */ __webpack_exports__["default"] = (sqnc);
 
