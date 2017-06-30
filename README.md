@@ -12,12 +12,12 @@ npm i sqnc --save
 
 #### Or simply download \*.js file
 
-sqnc@1.0.7 minified file: [sqnc.min.js](https://github.com/forceuser/sqnc/releases/download/1.0.7/sqnc.min.js)
+sqnc@1.0.8 minified file: [sqnc.min.js](https://github.com/forceuser/sqnc/releases/download/1.0.8/sqnc.min.js)
 
 #### Or just load from CDN
 
 ```html
-<script src="//cdn.rawgit.com/forceuser/sqnc/1.0.7/dist/sqnc.min.js">
+<script src="//cdn.rawgit.com/forceuser/sqnc/1.0.8/dist/sqnc.min.js">
 </script>
 ```
 
@@ -30,6 +30,8 @@ And then use **sqnc** as global variable
 ## [Documentation](./DOCUMENTATION.md)
 
 ## Example
+
+Run example with [runkit](https://npm.runkit.com/sqnc)
 
 ```js
 const sqnc = require("sqnc");

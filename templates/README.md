@@ -31,6 +31,8 @@ And then use **sqnc** as global variable
 
 ## Example
 
+Run example with [runkit](https://npm.runkit.com/sqnc)
+
 ```js
 const sqnc = require("sqnc");
 
