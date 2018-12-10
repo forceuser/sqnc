@@ -8,18 +8,13 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = (env = {}) => {
 	const result = merge(baseConfig(env), {
-		mode: "development",
+		mode: "production",
+		optimization: {
+			minimizer: [new UglifyJsPlugin({
+				parallel: isWSL ? false : true,
+			})]
+		},
 	});
-	result.target = "node";
-	result.entry = [
-		"@babel/polyfill",
-		path.resolve(__dirname, "../test/index.js")
-	];
-	result.output = {
-		path: path.resolve(__dirname, "../test/build"),
-		filename: "index.js"
-	};
-
 	// result.plugins.push(new webpack.optimize.MinChunkSizePlugin({minChunkSize: 100000}));
 
 	return result;
