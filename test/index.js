@@ -24,15 +24,18 @@ test(`Reverse char sequence (from: "D", to: "A")`, t => {
 
 test(`Straight utf16 sequence (from: "👰", to: "👶")`, t => {
 	t.deepEqual(sqnc({from: "👰", to: "👶"}).toArray(), ["👰", "👱", "👲", "👳", "👴", "👵", "👶"]);
+	t.deepEqual(sqnc({from: "\u2648"}).toArray(12), ["♈", "♉", "♊", "♋", "♌", "♍", "♎", "♏", "♐", "♑", "♒", "♓"]);
 	t.end();
 });
 
 test(`Reverse utf16 sequence (from: "👶", to: "👰")`, t => {
 	t.deepEqual(sqnc({from: "👶", to: "👰"}).toArray(), ["👶", "👵", "👴", "👳", "👲", "👱", "👰"]);
+	t.deepEqual(sqnc({from: "👶", to: "👶"}).toArray(), ["👶"]);
 	t.end();
 });
 
 test(`Custom step`, t => {
+	t.deepEqual(sqnc("👶", null, 2).toArray(5), ["👶", "👸", "👺", "👼", "👾"]);
 	t.deepEqual(sqnc({from: "👶", step: 2, count: 5}).toArray(), ["👶", "👸", "👺", "👼", "👾"]);
 	t.deepEqual(sqnc({from: "👶", step: -2, count: 5}).toArray(), ["👶", "👴", "👲", "👰", "👮"]);
 	t.deepEqual(sqnc({from: "👰", to: "👶", step: 2}).toArray(), ["👰", "👲", "👴", "👶"]);
@@ -41,8 +44,21 @@ test(`Custom step`, t => {
 });
 
 test(`Placeholder with count`, t => {
+	t.deepEqual(sqnc("👶").toArray(5), ["👶", "👶", "👶", "👶", "👶"]);
 	t.deepEqual(sqnc({fill: "👶", count: 5}).toArray(), ["👶", "👶", "👶", "👶", "👶"]);
 	t.deepEqual(sqnc({from: 1, step: 1, count: 3}).toArray(), [1, 2, 3]);
+	t.throws(() => sqnc("a").toArray());
+	t.end();
+});
+
+test(`Use as iterator`, t => {
+	t.deepEqual([...sqnc({from: 1, to: 5})], [1, 2, 3, 4, 5]);
+	t.deepEqual([...sqnc(idx => idx + 1, 5)], [1, 2, 3, 4, 5]);
+	t.end();
+});
+
+test(`Use as infinite iterator`, t => {
+	t.deepEqual([...sqnc({fn: idx => idx + 1}).toArray(5)], [1, 2, 3, 4, 5]);
 	t.end();
 });
 
@@ -70,7 +86,9 @@ test(`Custom filler with toArray count`, t => {
 // });
 
 test(`Utils`, t => {
+
 	const utf16array = sqnc.utils.StringToUTF16Array("👰");
+	t.deepEqual(sqnc.utils.delta("👰", "👶"), 7);
 	t.deepEqual(sqnc.utils.DecToUTF16Array(sqnc.utils.UTF16ArrayToDec(utf16array)), utf16array);
 	t.deepEqual(sqnc.utils.DecToUTF16Array(256 * 256), [1, 0]);
 	t.equal(sqnc.utils.inc(1), 2);

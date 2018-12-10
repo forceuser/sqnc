@@ -1,11 +1,3 @@
-function isInt (n) {
-	return n % 1 === 0;
-}
-
-function isFiniteNumber (value) {
-	return Number(value) === value && isFinite(value);
-}
-
 const UTF16MAX = 65536;
 
 function StringToUTF16Array (val) {
@@ -68,7 +60,22 @@ function inc (val, count = 1) {
 }
 
 class SQNCIterable {
-	constructor (options) {
+	constructor (...args) {
+		let options;
+		if (typeof args[0] === "object") {
+			options = args[0];
+		}
+		else if (typeof args[0] === "function") {
+			options = {fn: args[0], count: args[1]};
+		}
+		else if (args.length === 1) {
+			options = {fill: args[0]};
+		}
+		else {
+			options = {from: args[0], to: args[1], step: args[2], count: args[3]};
+		}
+
+
 		let {fill, from = 0, to, step = 1, count, fn} = options;
 		let chars = false;
 		if (typeof from === "string") {
@@ -91,7 +98,7 @@ class SQNCIterable {
 				return count;
 			},
 		});
-		this.iterator = function*(count) {
+		this.iterator = function* (count) {
 			let idx = 0;
 			let val = from;
 			const data = {};
@@ -118,14 +125,14 @@ class SQNCIterable {
 	toArray (count) {
 		count = count == null ? this.length : count;
 		if (count == null) {
-			throw Error("Iterable should be finite to cast to array");
+			throw Error("Can't cast to Array: Infinite iterable");
 		}
 		return Array.from(this.iterator(count));
 	}
 }
 
-function sqnc (options) {
-	return new SQNCIterable(options);
+function sqnc (...args) {
+	return new SQNCIterable(...args);
 }
 
 sqnc.maxLength = UTF16MAX;
@@ -133,8 +140,6 @@ sqnc.utils = {
 	inc,
 	compare,
 	delta,
-	isInt,
-	isFiniteNumber,
 	StringToUTF16Array,
 	UTF16ArrayToString,
 	DecToUTF16Array,
