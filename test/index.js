@@ -57,13 +57,59 @@ test(`Use as iterator`, t => {
 	t.end();
 });
 
+test(`Async iterator and for-await-of loop`, async t => {
+	t.timeoutAfter(3000);
+	const timeout = (cb, time) => new Promise(resolve => setTimeout(() => resolve(cb()), time));
+	const iter = sqnc(async (idx) => timeout(() => `--${idx}`, 100), 3);
+
+	let result = "";
+	for await (const val of iter) {
+		result += val;
+	}
+	t.equal("--0--1--2", result);
+	t.end();
+});
+
 test(`Use as infinite iterator`, t => {
+	t.deepEqual([...sqnc({fn: idx => idx + 1}).count(5)], [1, 2, 3, 4, 5]);
 	t.deepEqual([...sqnc({fn: idx => idx + 1}).toArray(5)], [1, 2, 3, 4, 5]);
 	t.end();
 });
 
+test(`Function based sequence`, t => {
+	t.deepEqual(
+		[
+			...sqnc({
+				fn: (idx, data) => {
+					const result = data.current;
+					[data.current, data.next] = [data.next, data.current + data.next];
+					return result;
+				},
+				init: () => ({current: 0, next: 1}),
+			})
+				.count(10),
+		],
+		[0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+	);
+
+	t.end();
+});
+
+
 test(`Custom filler with toArray count`, t => {
 	t.deepEqual(sqnc({fn: idx => `item${idx + 1}`}).toArray(5), ["item1", "item2", "item3", "item4", "item5"]);
+	t.end();
+});
+
+
+test(`Utils`, t => {
+
+	const utf16array = sqnc.utils.stringToUTF16Array("👰");
+	t.deepEqual(sqnc.utils.delta("👰", "👶"), 7);
+	t.deepEqual(sqnc.utils.decToUTF16Array(sqnc.utils.utf16ArrayToDec(utf16array)), utf16array);
+	t.deepEqual(sqnc.utils.decToUTF16Array(256 * 256), [1, 0]);
+	t.equal(sqnc.utils.inc(1), 2);
+	t.equal(sqnc.utils.inc(1, -1), 0);
 	t.end();
 });
 
@@ -84,14 +130,3 @@ test(`Custom filler with toArray count`, t => {
 // 	t.deepEqual(sqnc(3), []);
 // 	t.end();
 // });
-
-test(`Utils`, t => {
-
-	const utf16array = sqnc.utils.StringToUTF16Array("👰");
-	t.deepEqual(sqnc.utils.delta("👰", "👶"), 7);
-	t.deepEqual(sqnc.utils.DecToUTF16Array(sqnc.utils.UTF16ArrayToDec(utf16array)), utf16array);
-	t.deepEqual(sqnc.utils.DecToUTF16Array(256 * 256), [1, 0]);
-	t.equal(sqnc.utils.inc(1), 2);
-	t.equal(sqnc.utils.inc(1, -1), 0);
-	t.end();
-});

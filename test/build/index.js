@@ -25261,7 +25261,7 @@ module.exports = __webpack_amd_options__;
 __webpack_require__.r(__webpack_exports__);
 var cov_1r1b8we1fz = function () {
   var path = "/mnt/c/Projects/sqnc/src/js/index.js",
-      hash = "fb30986f76b26e507f18274c6a52667be2cfbc35",
+      hash = "eb23255a2583d20eb4b3273978c86a82ec24c30c",
       Function = function () {}.constructor,
       global = new Function('return this')(),
       gcv = "__coverage__",
@@ -25650,131 +25650,131 @@ var cov_1r1b8we1fz = function () {
       },
       "38": {
         start: {
-          line: 79,
-          column: 50
+          line: 78,
+          column: 56
         },
         end: {
-          line: 79,
-          column: 57
+          line: 78,
+          column: 63
         }
       },
       "39": {
         start: {
-          line: 80,
+          line: 79,
           column: 14
         },
         end: {
-          line: 80,
+          line: 79,
           column: 19
         }
       },
       "40": {
         start: {
-          line: 81,
+          line: 80,
           column: 2
         },
         end: {
-          line: 84,
+          line: 83,
           column: 3
         }
       },
       "41": {
         start: {
-          line: 82,
+          line: 81,
           column: 3
         },
         end: {
-          line: 82,
+          line: 81,
           column: 35
         }
       },
       "42": {
         start: {
-          line: 83,
+          line: 82,
           column: 3
         },
         end: {
-          line: 83,
+          line: 82,
           column: 16
         }
       },
       "43": {
         start: {
-          line: 86,
+          line: 85,
           column: 2
         },
         end: {
-          line: 89,
+          line: 88,
           column: 3
         }
       },
       "44": {
         start: {
-          line: 87,
+          line: 86,
           column: 3
         },
         end: {
-          line: 87,
+          line: 86,
           column: 31
         }
       },
       "45": {
         start: {
-          line: 88,
+          line: 87,
           column: 3
         },
         end: {
-          line: 88,
+          line: 87,
           column: 16
         }
       },
       "46": {
         start: {
-          line: 91,
+          line: 90,
           column: 2
         },
         end: {
-          line: 94,
+          line: 93,
           column: 3
         }
       },
       "47": {
         start: {
-          line: 92,
+          line: 91,
           column: 3
         },
         end: {
-          line: 92,
+          line: 91,
           column: 60
         }
       },
       "48": {
         start: {
-          line: 93,
+          line: 92,
           column: 3
         },
         end: {
-          line: 93,
+          line: 92,
           column: 55
         }
       },
       "49": {
         start: {
-          line: 96,
+          line: 95,
           column: 2
         },
         end: {
-          line: 100,
+          line: 99,
           column: 5
         }
       },
       "50": {
         start: {
-          line: 98,
+          line: 97,
           column: 4
         },
         end: {
-          line: 98,
+          line: 97,
           column: 17
         }
       },
@@ -25784,224 +25784,284 @@ var cov_1r1b8we1fz = function () {
           column: 2
         },
         end: {
-          line: 120,
+          line: 104,
           column: 4
         }
       },
       "52": {
         start: {
           line: 102,
-          column: 13
+          column: 3
         },
         end: {
           line: 102,
-          column: 14
+          column: 15
         }
       },
       "53": {
         start: {
           line: 103,
-          column: 13
+          column: 3
         },
         end: {
           line: 103,
-          column: 17
+          column: 15
         }
       },
       "54": {
         start: {
-          line: 104,
-          column: 16
+          line: 106,
+          column: 2
         },
         end: {
-          line: 104,
-          column: 18
+          line: 132,
+          column: 4
         }
       },
       "55": {
         start: {
-          line: 105,
-          column: 3
+          line: 107,
+          column: 13
         },
         end: {
-          line: 105,
-          column: 32
+          line: 107,
+          column: 14
         }
       },
       "56": {
         start: {
-          line: 106,
-          column: 3
+          line: 108,
+          column: 13
         },
         end: {
-          line: 119,
-          column: 4
+          line: 108,
+          column: 17
         }
       },
       "57": {
         start: {
-          line: 107,
-          column: 4
+          line: 110,
+          column: 3
         },
         end: {
-          line: 117,
-          column: 5
+          line: 131,
+          column: 4
         }
       },
       "58": {
         start: {
-          line: 108,
-          column: 5
+          line: 111,
+          column: 4
         },
         end: {
-          line: 108,
-          column: 16
+          line: 114,
+          column: 5
         }
       },
       "59": {
         start: {
-          line: 110,
-          column: 9
+          line: 112,
+          column: 5
         },
         end: {
-          line: 117,
-          column: 5
+          line: 112,
+          column: 16
         }
       },
       "60": {
         start: {
-          line: 111,
+          line: 113,
           column: 5
         },
         end: {
-          line: 111,
-          column: 25
+          line: 113,
+          column: 11
         }
       },
       "61": {
         start: {
-          line: 114,
-          column: 17
+          line: 116,
+          column: 8
         },
         end: {
-          line: 114,
-          column: 54
+          line: 131,
+          column: 4
         }
       },
       "62": {
         start: {
-          line: 115,
-          column: 5
+          line: 117,
+          column: 17
         },
         end: {
-          line: 115,
-          column: 15
+          line: 117,
+          column: 57
         }
       },
       "63": {
         start: {
-          line: 116,
-          column: 5
+          line: 119,
+          column: 4
         },
         end: {
-          line: 116,
-          column: 26
+          line: 122,
+          column: 5
         }
       },
       "64": {
         start: {
-          line: 118,
-          column: 4
+          line: 120,
+          column: 5
         },
         end: {
-          line: 118,
-          column: 10
+          line: 120,
+          column: 25
         }
       },
       "65": {
         start: {
-          line: 123,
-          column: 2
+          line: 121,
+          column: 5
         },
         end: {
-          line: 123,
-          column: 25
+          line: 121,
+          column: 11
         }
       },
       "66": {
         start: {
-          line: 126,
-          column: 2
+          line: 125,
+          column: 4
         },
         end: {
-          line: 126,
-          column: 46
+          line: 130,
+          column: 5
         }
       },
       "67": {
         start: {
-          line: 127,
-          column: 2
+          line: 126,
+          column: 17
         },
         end: {
-          line: 129,
-          column: 3
+          line: 126,
+          column: 54
         }
       },
       "68": {
         start: {
-          line: 128,
-          column: 3
+          line: 127,
+          column: 5
         },
         end: {
-          line: 128,
-          column: 57
+          line: 127,
+          column: 15
         }
       },
       "69": {
         start: {
-          line: 130,
-          column: 2
+          line: 128,
+          column: 5
         },
         end: {
-          line: 130,
-          column: 42
+          line: 128,
+          column: 26
         }
       },
       "70": {
         start: {
-          line: 135,
-          column: 1
+          line: 129,
+          column: 5
         },
         end: {
-          line: 135,
-          column: 34
+          line: 129,
+          column: 11
         }
       },
       "71": {
         start: {
-          line: 138,
-          column: 0
+          line: 135,
+          column: 2
         },
         end: {
-          line: 138,
-          column: 26
+          line: 135,
+          column: 25
         }
       },
       "72": {
         start: {
+          line: 138,
+          column: 2
+        },
+        end: {
+          line: 138,
+          column: 46
+        }
+      },
+      "73": {
+        start: {
           line: 139,
+          column: 2
+        },
+        end: {
+          line: 141,
+          column: 3
+        }
+      },
+      "74": {
+        start: {
+          line: 140,
+          column: 3
+        },
+        end: {
+          line: 140,
+          column: 60
+        }
+      },
+      "75": {
+        start: {
+          line: 142,
+          column: 2
+        },
+        end: {
+          line: 142,
+          column: 39
+        }
+      },
+      "76": {
+        start: {
+          line: 181,
+          column: 1
+        },
+        end: {
+          line: 181,
+          column: 34
+        }
+      },
+      "77": {
+        start: {
+          line: 184,
           column: 0
         },
         end: {
-          line: 147,
+          line: 184,
+          column: 26
+        }
+      },
+      "78": {
+        start: {
+          line: 185,
+          column: 0
+        },
+        end: {
+          line: 193,
           column: 2
         }
       }
     },
     fnMap: {
       "0": {
-        name: "StringToUTF16Array",
+        name: "stringToUTF16Array",
         decl: {
           start: {
             line: 3,
@@ -26049,7 +26109,7 @@ var cov_1r1b8we1fz = function () {
         line: 4
       },
       "2": {
-        name: "UTF16ArrayToString",
+        name: "utf16ArrayToString",
         decl: {
           start: {
             line: 7,
@@ -26073,7 +26133,7 @@ var cov_1r1b8we1fz = function () {
         line: 7
       },
       "3": {
-        name: "UTF16ArrayToDec",
+        name: "utf16ArrayToDec",
         decl: {
           start: {
             line: 11,
@@ -26097,7 +26157,7 @@ var cov_1r1b8we1fz = function () {
         line: 11
       },
       "4": {
-        name: "DecToUTF16Array",
+        name: "decToUTF16Array",
         decl: {
           start: {
             line: 21,
@@ -26210,7 +26270,7 @@ var cov_1r1b8we1fz = function () {
             column: 23
           },
           end: {
-            line: 121,
+            line: 133,
             column: 2
           }
         },
@@ -26220,45 +26280,45 @@ var cov_1r1b8we1fz = function () {
         name: "(anonymous_9)",
         decl: {
           start: {
-            line: 97,
+            line: 96,
             column: 3
           },
           end: {
-            line: 97,
+            line: 96,
             column: 4
           }
         },
         loc: {
           start: {
-            line: 97,
+            line: 96,
             column: 10
           },
           end: {
-            line: 99,
+            line: 98,
             column: 4
           }
         },
-        line: 97
+        line: 96
       },
       "10": {
         name: "(anonymous_10)",
         decl: {
           start: {
             line: 101,
-            column: 18
+            column: 15
           },
           end: {
             line: 101,
-            column: 19
+            column: 16
           }
         },
         loc: {
           start: {
             line: 101,
-            column: 36
+            column: 24
           },
           end: {
-            line: 120,
+            line: 104,
             column: 3
           }
         },
@@ -26268,73 +26328,97 @@ var cov_1r1b8we1fz = function () {
         name: "(anonymous_11)",
         decl: {
           start: {
-            line: 122,
-            column: 1
+            line: 106,
+            column: 18
           },
           end: {
-            line: 122,
-            column: 2
+            line: 106,
+            column: 19
           }
         },
         loc: {
           start: {
-            line: 122,
-            column: 23
+            line: 106,
+            column: 31
           },
           end: {
-            line: 124,
-            column: 2
+            line: 132,
+            column: 3
           }
         },
-        line: 122
+        line: 106
       },
       "12": {
         name: "(anonymous_12)",
         decl: {
           start: {
-            line: 125,
+            line: 134,
             column: 1
           },
           end: {
-            line: 125,
+            line: 134,
             column: 2
           }
         },
         loc: {
           start: {
-            line: 125,
-            column: 17
+            line: 134,
+            column: 23
           },
           end: {
-            line: 131,
+            line: 136,
             column: 2
           }
         },
-        line: 125
+        line: 134
       },
       "13": {
+        name: "(anonymous_13)",
+        decl: {
+          start: {
+            line: 137,
+            column: 1
+          },
+          end: {
+            line: 137,
+            column: 2
+          }
+        },
+        loc: {
+          start: {
+            line: 137,
+            column: 17
+          },
+          end: {
+            line: 143,
+            column: 2
+          }
+        },
+        line: 137
+      },
+      "14": {
         name: "sqnc",
         decl: {
           start: {
-            line: 134,
+            line: 180,
             column: 9
           },
           end: {
-            line: 134,
+            line: 180,
             column: 13
           }
         },
         loc: {
           start: {
-            line: 134,
+            line: 180,
             column: 24
           },
           end: {
-            line: 136,
+            line: 182,
             column: 1
           }
         },
-        line: 134
+        line: 180
       }
     },
     branchMap: {
@@ -26761,422 +26845,422 @@ var cov_1r1b8we1fz = function () {
       "13": {
         loc: {
           start: {
-            line: 79,
+            line: 78,
             column: 13
           },
           end: {
-            line: 79,
+            line: 78,
             column: 21
           }
         },
         type: "default-arg",
         locations: [{
           start: {
-            line: 79,
+            line: 78,
             column: 20
           },
           end: {
-            line: 79,
+            line: 78,
             column: 21
           }
         }],
-        line: 79
+        line: 78
       },
       "14": {
         loc: {
           start: {
-            line: 79,
+            line: 78,
             column: 27
           },
           end: {
-            line: 79,
+            line: 78,
             column: 35
           }
         },
         type: "default-arg",
         locations: [{
           start: {
-            line: 79,
+            line: 78,
             column: 34
           },
           end: {
-            line: 79,
+            line: 78,
             column: 35
           }
         }],
-        line: 79
+        line: 78
       },
       "15": {
         loc: {
           start: {
-            line: 81,
+            line: 80,
             column: 2
           },
           end: {
-            line: 84,
+            line: 83,
             column: 3
           }
         },
         type: "if",
         locations: [{
           start: {
-            line: 81,
+            line: 80,
             column: 2
           },
           end: {
-            line: 84,
+            line: 83,
             column: 3
           }
         }, {
           start: {
-            line: 81,
+            line: 80,
             column: 2
           },
           end: {
-            line: 84,
+            line: 83,
             column: 3
           }
         }],
-        line: 81
+        line: 80
       },
       "16": {
         loc: {
           start: {
-            line: 86,
+            line: 85,
             column: 2
           },
           end: {
-            line: 89,
+            line: 88,
             column: 3
           }
         },
         type: "if",
         locations: [{
           start: {
-            line: 86,
+            line: 85,
             column: 2
           },
           end: {
-            line: 89,
+            line: 88,
             column: 3
           }
         }, {
           start: {
-            line: 86,
+            line: 85,
             column: 2
           },
           end: {
-            line: 89,
+            line: 88,
             column: 3
           }
         }],
-        line: 86
+        line: 85
       },
       "17": {
         loc: {
           start: {
-            line: 91,
+            line: 90,
             column: 2
           },
           end: {
-            line: 94,
+            line: 93,
             column: 3
           }
         },
         type: "if",
         locations: [{
           start: {
-            line: 91,
+            line: 90,
             column: 2
           },
           end: {
-            line: 94,
+            line: 93,
             column: 3
           }
         }, {
           start: {
-            line: 91,
+            line: 90,
             column: 2
           },
           end: {
-            line: 94,
+            line: 93,
             column: 3
           }
         }],
-        line: 91
+        line: 90
       },
       "18": {
         loc: {
           start: {
-            line: 91,
+            line: 90,
             column: 6
           },
           end: {
-            line: 91,
+            line: 90,
             column: 40
           }
         },
         type: "binary-expr",
         locations: [{
           start: {
-            line: 91,
+            line: 90,
             column: 6
           },
           end: {
-            line: 91,
+            line: 90,
             column: 18
           }
         }, {
           start: {
-            line: 91,
+            line: 90,
             column: 22
           },
           end: {
-            line: 91,
+            line: 90,
             column: 32
           }
         }, {
           start: {
-            line: 91,
+            line: 90,
             column: 36
           },
           end: {
-            line: 91,
+            line: 90,
             column: 40
           }
         }],
-        line: 91
+        line: 90
       },
       "19": {
         loc: {
           start: {
-            line: 92,
+            line: 91,
             column: 11
           },
           end: {
-            line: 92,
+            line: 91,
             column: 41
           }
         },
         type: "cond-expr",
         locations: [{
           start: {
-            line: 92,
+            line: 91,
             column: 35
           },
           end: {
-            line: 92,
+            line: 91,
             column: 37
           }
         }, {
           start: {
-            line: 92,
+            line: 91,
             column: 40
           },
           end: {
-            line: 92,
+            line: 91,
             column: 41
           }
         }],
-        line: 92
+        line: 91
       },
       "20": {
         loc: {
           start: {
-            line: 105,
-            column: 11
-          },
-          end: {
-            line: 105,
-            column: 31
-          }
-        },
-        type: "binary-expr",
-        locations: [{
-          start: {
-            line: 105,
-            column: 11
-          },
-          end: {
-            line: 105,
-            column: 16
-          }
-        }, {
-          start: {
-            line: 105,
-            column: 20
-          },
-          end: {
-            line: 105,
-            column: 31
-          }
-        }],
-        line: 105
-      },
-      "21": {
-        loc: {
-          start: {
-            line: 107,
-            column: 4
-          },
-          end: {
-            line: 117,
-            column: 5
-          }
-        },
-        type: "if",
-        locations: [{
-          start: {
-            line: 107,
-            column: 4
-          },
-          end: {
-            line: 117,
-            column: 5
-          }
-        }, {
-          start: {
-            line: 107,
-            column: 4
-          },
-          end: {
-            line: 117,
-            column: 5
-          }
-        }],
-        line: 107
-      },
-      "22": {
-        loc: {
-          start: {
             line: 110,
-            column: 9
+            column: 3
           },
           end: {
-            line: 117,
-            column: 5
+            line: 131,
+            column: 4
           }
         },
         type: "if",
         locations: [{
           start: {
             line: 110,
-            column: 9
+            column: 3
           },
           end: {
-            line: 117,
-            column: 5
+            line: 131,
+            column: 4
           }
         }, {
           start: {
             line: 110,
-            column: 9
+            column: 3
           },
           end: {
-            line: 117,
-            column: 5
+            line: 131,
+            column: 4
           }
         }],
         line: 110
       },
-      "23": {
+      "21": {
         loc: {
           start: {
-            line: 114,
+            line: 116,
+            column: 8
+          },
+          end: {
+            line: 131,
+            column: 4
+          }
+        },
+        type: "if",
+        locations: [{
+          start: {
+            line: 116,
+            column: 8
+          },
+          end: {
+            line: 131,
+            column: 4
+          }
+        }, {
+          start: {
+            line: 116,
+            column: 8
+          },
+          end: {
+            line: 131,
+            column: 4
+          }
+        }],
+        line: 116
+      },
+      "22": {
+        loc: {
+          start: {
+            line: 117,
             column: 17
           },
           end: {
-            line: 114,
+            line: 117,
+            column: 57
+          }
+        },
+        type: "cond-expr",
+        locations: [{
+          start: {
+            line: 117,
+            column: 46
+          },
+          end: {
+            line: 117,
+            column: 52
+          }
+        }, {
+          start: {
+            line: 117,
+            column: 55
+          },
+          end: {
+            line: 117,
+            column: 57
+          }
+        }],
+        line: 117
+      },
+      "23": {
+        loc: {
+          start: {
+            line: 126,
+            column: 17
+          },
+          end: {
+            line: 126,
             column: 54
           }
         },
         type: "cond-expr",
         locations: [{
           start: {
-            line: 114,
+            line: 126,
             column: 25
           },
           end: {
-            line: 114,
+            line: 126,
             column: 48
           }
         }, {
           start: {
-            line: 114,
+            line: 126,
             column: 51
           },
           end: {
-            line: 114,
+            line: 126,
             column: 54
           }
         }],
-        line: 114
+        line: 126
       },
       "24": {
         loc: {
           start: {
-            line: 126,
+            line: 138,
             column: 10
           },
           end: {
-            line: 126,
+            line: 138,
             column: 45
           }
         },
         type: "cond-expr",
         locations: [{
           start: {
-            line: 126,
+            line: 138,
             column: 26
           },
           end: {
-            line: 126,
+            line: 138,
             column: 37
           }
         }, {
           start: {
-            line: 126,
+            line: 138,
             column: 40
           },
           end: {
-            line: 126,
+            line: 138,
             column: 45
           }
         }],
-        line: 126
+        line: 138
       },
       "25": {
         loc: {
           start: {
-            line: 127,
+            line: 139,
             column: 2
           },
           end: {
-            line: 129,
+            line: 141,
             column: 3
           }
         },
         type: "if",
         locations: [{
           start: {
-            line: 127,
+            line: 139,
             column: 2
           },
           end: {
-            line: 129,
+            line: 141,
             column: 3
           }
         }, {
           start: {
-            line: 127,
+            line: 139,
             column: 2
           },
           end: {
-            line: 129,
+            line: 141,
             column: 3
           }
         }],
-        line: 127
+        line: 139
       }
     },
     s: {
@@ -27252,7 +27336,13 @@ var cov_1r1b8we1fz = function () {
       "69": 0,
       "70": 0,
       "71": 0,
-      "72": 0
+      "72": 0,
+      "73": 0,
+      "74": 0,
+      "75": 0,
+      "76": 0,
+      "77": 0,
+      "78": 0
     },
     f: {
       "0": 0,
@@ -27268,7 +27358,8 @@ var cov_1r1b8we1fz = function () {
       "10": 0,
       "11": 0,
       "12": 0,
-      "13": 0
+      "13": 0,
+      "14": 0
     },
     b: {
       "0": [0, 0],
@@ -27326,7 +27417,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 var UTF16MAX = (cov_1r1b8we1fz.s[0]++, 65536);
 
-function StringToUTF16Array(val) {
+function stringToUTF16Array(val) {
   cov_1r1b8we1fz.f[0]++;
   cov_1r1b8we1fz.s[1]++;
   return val.split("").map(function (c) {
@@ -27336,13 +27427,13 @@ function StringToUTF16Array(val) {
   });
 }
 
-function UTF16ArrayToString(val) {
+function utf16ArrayToString(val) {
   cov_1r1b8we1fz.f[2]++;
   cov_1r1b8we1fz.s[3]++;
   return String.fromCharCode.apply(null, val);
 }
 
-function UTF16ArrayToDec(val) {
+function utf16ArrayToDec(val) {
   cov_1r1b8we1fz.f[3]++;
   var res = (cov_1r1b8we1fz.s[4]++, 0);
   var n = (cov_1r1b8we1fz.s[5]++, 0);
@@ -27359,7 +27450,7 @@ function UTF16ArrayToDec(val) {
   return res;
 }
 
-function DecToUTF16Array(val) {
+function decToUTF16Array(val) {
   cov_1r1b8we1fz.f[4]++;
   var res = (cov_1r1b8we1fz.s[10]++, []);
   cov_1r1b8we1fz.s[11]++;
@@ -27383,7 +27474,7 @@ function delta(a, b) {
   if (typeof a === "string") {
     cov_1r1b8we1fz.b[0][0]++;
     cov_1r1b8we1fz.s[17]++;
-    a = StringToUTF16Array(a);
+    a = stringToUTF16Array(a);
   } else {
     cov_1r1b8we1fz.b[0][1]++;
   }
@@ -27393,7 +27484,7 @@ function delta(a, b) {
   if (typeof b === "string") {
     cov_1r1b8we1fz.b[1][0]++;
     cov_1r1b8we1fz.s[19]++;
-    b = StringToUTF16Array(b);
+    b = stringToUTF16Array(b);
   } else {
     cov_1r1b8we1fz.b[1][1]++;
   }
@@ -27403,9 +27494,9 @@ function delta(a, b) {
   if ((cov_1r1b8we1fz.b[3][0]++, Array.isArray(a)) && (cov_1r1b8we1fz.b[3][1]++, Array.isArray(b))) {
     cov_1r1b8we1fz.b[2][0]++;
     cov_1r1b8we1fz.s[21]++;
-    a = UTF16ArrayToDec(a);
+    a = utf16ArrayToDec(a);
     cov_1r1b8we1fz.s[22]++;
-    b = UTF16ArrayToDec(b);
+    b = utf16ArrayToDec(b);
   } else {
     cov_1r1b8we1fz.b[2][1]++;
   }
@@ -27421,9 +27512,9 @@ function compare(a, b) {
   if ((cov_1r1b8we1fz.b[5][0]++, Array.isArray(a)) && (cov_1r1b8we1fz.b[5][1]++, Array.isArray(b))) {
     cov_1r1b8we1fz.b[4][0]++;
     cov_1r1b8we1fz.s[25]++;
-    a = UTF16ArrayToDec(a);
+    a = utf16ArrayToDec(a);
     cov_1r1b8we1fz.s[26]++;
-    b = UTF16ArrayToDec(b);
+    b = utf16ArrayToDec(b);
   } else {
     cov_1r1b8we1fz.b[4][1]++;
   }
@@ -27440,7 +27531,7 @@ function inc(val) {
   if (Array.isArray(val)) {
     cov_1r1b8we1fz.b[9][0]++;
     cov_1r1b8we1fz.s[29]++;
-    return DecToUTF16Array(UTF16ArrayToDec(val) + count);
+    return decToUTF16Array(utf16ArrayToDec(val) + count);
   } else {
     cov_1r1b8we1fz.b[9][1]++;
     cov_1r1b8we1fz.s[30]++;
@@ -27448,11 +27539,13 @@ function inc(val) {
   }
 }
 
-var SQNCIterable =
+var SqncIterator =
 /*#__PURE__*/
 function () {
-  function SQNCIterable() {
-    _classCallCheck(this, SQNCIterable);
+  function SqncIterator() {
+    var _this = this;
+
+    _classCallCheck(this, SqncIterator);
 
     cov_1r1b8we1fz.f[8]++;
     var options;
@@ -27504,7 +27597,8 @@ function () {
         _ref$step = _ref.step,
         step = _ref$step === void 0 ? (cov_1r1b8we1fz.b[14][0]++, 1) : _ref$step,
         count = _ref.count,
-        fn = _ref.fn;
+        fn = _ref.fn,
+        init = _ref.init;
 
     var chars = (cov_1r1b8we1fz.s[39]++, false);
     cov_1r1b8we1fz.s[40]++;
@@ -27512,7 +27606,7 @@ function () {
     if (typeof from === "string") {
       cov_1r1b8we1fz.b[15][0]++;
       cov_1r1b8we1fz.s[41]++;
-      from = StringToUTF16Array(from);
+      from = stringToUTF16Array(from);
       cov_1r1b8we1fz.s[42]++;
       chars = true;
     } else {
@@ -27524,7 +27618,7 @@ function () {
     if (typeof to === "string") {
       cov_1r1b8we1fz.b[16][0]++;
       cov_1r1b8we1fz.s[44]++;
-      to = StringToUTF16Array(to);
+      to = stringToUTF16Array(to);
       cov_1r1b8we1fz.s[45]++;
       chars = true;
     } else {
@@ -27552,80 +27646,114 @@ function () {
       }
     });
     cov_1r1b8we1fz.s[51]++;
+
+    this.count = function (val) {
+      cov_1r1b8we1fz.f[10]++;
+      cov_1r1b8we1fz.s[52]++;
+      count = val;
+      cov_1r1b8we1fz.s[53]++;
+      return _this;
+    };
+
+    cov_1r1b8we1fz.s[54]++;
     this.iterator =
     /*#__PURE__*/
-    regeneratorRuntime.mark(function _callee(count) {
+    regeneratorRuntime.mark(function _callee() {
       var idx, val, data, res;
       return regeneratorRuntime.wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              cov_1r1b8we1fz.f[10]++;
-              idx = (cov_1r1b8we1fz.s[52]++, 0);
-              val = (cov_1r1b8we1fz.s[53]++, from);
-              data = (cov_1r1b8we1fz.s[54]++, {});
-              cov_1r1b8we1fz.s[55]++;
-              count = (cov_1r1b8we1fz.b[20][0]++, count) || (cov_1r1b8we1fz.b[20][1]++, this.length);
-              cov_1r1b8we1fz.s[56]++;
-
-            case 7:
-              if (!(idx < count)) {
-                _context.next = 36;
-                break;
-              }
-
+              cov_1r1b8we1fz.f[11]++;
+              idx = (cov_1r1b8we1fz.s[55]++, 0);
+              val = (cov_1r1b8we1fz.s[56]++, from);
               cov_1r1b8we1fz.s[57]++;
 
               if (!("fill" in options)) {
-                _context.next = 16;
+                _context.next = 17;
                 break;
               }
 
-              cov_1r1b8we1fz.b[21][0]++;
+              cov_1r1b8we1fz.b[20][0]++;
               cov_1r1b8we1fz.s[58]++;
-              _context.next = 14;
+
+            case 7:
+              if (!(idx < count)) {
+                _context.next = 15;
+                break;
+              }
+
+              cov_1r1b8we1fz.s[59]++;
+              _context.next = 11;
               return fill;
 
-            case 14:
-              _context.next = 32;
-              break;
-
-            case 16:
-              cov_1r1b8we1fz.b[21][1]++;
-              cov_1r1b8we1fz.s[59]++;
-
-              if (!fn) {
-                _context.next = 25;
-                break;
-              }
-
-              cov_1r1b8we1fz.b[22][0]++;
+            case 11:
               cov_1r1b8we1fz.s[60]++;
-              _context.next = 23;
-              return fn(idx, data);
-
-            case 23:
-              _context.next = 32;
-              break;
-
-            case 25:
-              cov_1r1b8we1fz.b[22][1]++;
-              res = (cov_1r1b8we1fz.s[61]++, chars ? (cov_1r1b8we1fz.b[23][0]++, UTF16ArrayToString(val)) : (cov_1r1b8we1fz.b[23][1]++, val));
-              cov_1r1b8we1fz.s[62]++;
-              _context.next = 30;
-              return res;
-
-            case 30:
-              cov_1r1b8we1fz.s[63]++;
-              val = inc(val, step);
-
-            case 32:
-              cov_1r1b8we1fz.s[64]++;
               idx++;
               _context.next = 7;
               break;
 
-            case 36:
+            case 15:
+              _context.next = 46;
+              break;
+
+            case 17:
+              cov_1r1b8we1fz.b[20][1]++;
+              cov_1r1b8we1fz.s[61]++;
+
+              if (!fn) {
+                _context.next = 33;
+                break;
+              }
+
+              cov_1r1b8we1fz.b[21][0]++;
+              data = (cov_1r1b8we1fz.s[62]++, typeof init === "function" ? (cov_1r1b8we1fz.b[22][0]++, init()) : (cov_1r1b8we1fz.b[22][1]++, {}));
+              cov_1r1b8we1fz.s[63]++;
+
+            case 23:
+              if (!(idx < count)) {
+                _context.next = 31;
+                break;
+              }
+
+              cov_1r1b8we1fz.s[64]++;
+              _context.next = 27;
+              return fn(idx, data);
+
+            case 27:
+              cov_1r1b8we1fz.s[65]++;
+              idx++;
+              _context.next = 23;
+              break;
+
+            case 31:
+              _context.next = 46;
+              break;
+
+            case 33:
+              cov_1r1b8we1fz.b[21][1]++;
+              cov_1r1b8we1fz.s[66]++;
+
+            case 35:
+              if (!(idx < count)) {
+                _context.next = 46;
+                break;
+              }
+
+              res = (cov_1r1b8we1fz.s[67]++, chars ? (cov_1r1b8we1fz.b[23][0]++, utf16ArrayToString(val)) : (cov_1r1b8we1fz.b[23][1]++, val));
+              cov_1r1b8we1fz.s[68]++;
+              _context.next = 40;
+              return res;
+
+            case 40:
+              cov_1r1b8we1fz.s[69]++;
+              val = inc(val, step);
+              cov_1r1b8we1fz.s[70]++;
+              idx++;
+              _context.next = 35;
+              break;
+
+            case 46:
             case "end":
               return _context.stop();
           }
@@ -27634,7 +27762,7 @@ function () {
     });
   }
 
-  _createClass(SQNCIterable, [{
+  _createClass(SqncIterator, [{
     key: Symbol.iterator,
     value:
     /*#__PURE__*/
@@ -27643,8 +27771,8 @@ function () {
         while (1) {
           switch (_context2.prev = _context2.next) {
             case 0:
-              cov_1r1b8we1fz.f[11]++;
-              cov_1r1b8we1fz.s[65]++;
+              cov_1r1b8we1fz.f[12]++;
+              cov_1r1b8we1fz.s[71]++;
               return _context2.delegateYield(this.iterator(), "t0", 3);
 
             case 3:
@@ -27657,51 +27785,98 @@ function () {
   }, {
     key: "toArray",
     value: function toArray(count) {
-      cov_1r1b8we1fz.f[12]++;
-      cov_1r1b8we1fz.s[66]++;
+      cov_1r1b8we1fz.f[13]++;
+      cov_1r1b8we1fz.s[72]++;
       count = count == null ? (cov_1r1b8we1fz.b[24][0]++, this.length) : (cov_1r1b8we1fz.b[24][1]++, count);
-      cov_1r1b8we1fz.s[67]++;
+      cov_1r1b8we1fz.s[73]++;
 
       if (count == null) {
         cov_1r1b8we1fz.b[25][0]++;
-        cov_1r1b8we1fz.s[68]++;
-        throw Error("Can't cast to Array: Infinite iterable");
+        cov_1r1b8we1fz.s[74]++;
+        throw Error("Can't cast to an Array: Infinite iterable");
       } else {
         cov_1r1b8we1fz.b[25][1]++;
       }
 
-      cov_1r1b8we1fz.s[69]++;
-      return Array.from(this.iterator(count));
+      cov_1r1b8we1fz.s[75]++;
+      return Array.from(this.count(count));
     }
   }]);
 
-  return SQNCIterable;
+  return SqncIterator;
 }();
+/**
+ * @name sqnc
+ * @function
+ * @description Create sequence iterator with set of options
+ * @param {SqncOptions} options - sequence options
+ * @returns {SqncIterator} iterator
+ */
+
+/**
+ * @name sqnc
+ * @function
+ * @description Create sequence iterator with generation function
+ * @param {SqncGenFunction} fn - sequence generation function
+ * @param {Integer} [count] limit iterations count
+ * @returns {SqncIterator} iterator
+ */
+
+/**
+ * @name sqnc
+ * @function
+ * @description Create sequence iterator with range of values
+ * @param {Numeric|String} from - first value within iteration range
+ * @param {Numeric|String} to - last value within iteration range
+ * @param {Numeric} [step=1] iteration step
+ * @param {Integer} [count] limit iterations count (if {@link to} is undefined)
+ * @returns {SqncIterator} iterator
+ */
+
+/**
+ * @name sqnc
+ * @function
+ * @description Create iterator that will return only one value specified by fill param
+ * @param {Numeric|String} fill - value that will be returned by every step of iterator
+ * @returns {SqncIterator} iterator
+ */
+
 
 function sqnc() {
-  cov_1r1b8we1fz.f[13]++;
-  cov_1r1b8we1fz.s[70]++;
+  cov_1r1b8we1fz.f[14]++;
+  cov_1r1b8we1fz.s[76]++;
 
   for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
     args[_key] = arguments[_key];
   }
 
-  return _construct(SQNCIterable, args);
+  return _construct(SqncIterator, args);
 }
 
-cov_1r1b8we1fz.s[71]++;
+cov_1r1b8we1fz.s[77]++;
 sqnc.maxLength = UTF16MAX;
-cov_1r1b8we1fz.s[72]++;
+cov_1r1b8we1fz.s[78]++;
 sqnc.utils = {
   inc: inc,
   compare: compare,
   delta: delta,
-  StringToUTF16Array: StringToUTF16Array,
-  UTF16ArrayToString: UTF16ArrayToString,
-  DecToUTF16Array: DecToUTF16Array,
-  UTF16ArrayToDec: UTF16ArrayToDec
+  stringToUTF16Array: stringToUTF16Array,
+  utf16ArrayToString: utf16ArrayToString,
+  decToUTF16Array: decToUTF16Array,
+  utf16ArrayToDec: utf16ArrayToDec
 };
 /* harmony default export */ __webpack_exports__["default"] = (sqnc);
+/**
+ * @typedef SqncOptions
+ * @name SqncOptions
+ * @type {Object}
+ * @property {SqncGenFunction} fn -
+ * @property {SqncGenInitFunction} init -
+ * @property {Numeric|String} from -
+ * @property {Numeric|String} to -
+ * @property {Numeric} step -
+ * @property {Integer} count -
+ */
 
 /***/ }),
 
@@ -27719,6 +27894,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var sinon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! sinon */ "./node_modules/sinon/lib/sinon.js");
 /* harmony import */ var sinon__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(sinon__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var sqnc__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! sqnc */ "./src/js/index.js");
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
@@ -27726,6 +27905,8 @@ function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread n
 function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
 
 function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+function _asyncIterator(iterable) { var method; if (typeof Symbol === "function") { if (Symbol.asyncIterator) { method = iterable[Symbol.asyncIterator]; if (method != null) return method.call(iterable); } if (Symbol.iterator) { method = iterable[Symbol.iterator]; if (method != null) return method.call(iterable); } } throw new TypeError("Object is not async iterable"); }
 
 
 
@@ -27760,12 +27941,12 @@ tape__WEBPACK_IMPORTED_MODULE_0___default()("Reverse char sequence (from: \"D\",
 });
 tape__WEBPACK_IMPORTED_MODULE_0___default()("Straight utf16 sequence (from: \"\uD83D\uDC70\", to: \"\uD83D\uDC76\")", function (t) {
   t.deepEqual(Object(sqnc__WEBPACK_IMPORTED_MODULE_2__["default"])({
-    from: "\u2648"
-  }).toArray(12), ["♈", "♉", "♊", "♋", "♌", "♍", "♎", "♏", "♐", "♑", "♒", "♓"]);
-  t.deepEqual(Object(sqnc__WEBPACK_IMPORTED_MODULE_2__["default"])({
     from: "👰",
     to: "👶"
   }).toArray(), ["👰", "👱", "👲", "👳", "👴", "👵", "👶"]);
+  t.deepEqual(Object(sqnc__WEBPACK_IMPORTED_MODULE_2__["default"])({
+    from: "\u2648"
+  }).toArray(12), ["♈", "♉", "♊", "♋", "♌", "♍", "♎", "♏", "♐", "♑", "♒", "♓"]);
   t.end();
 });
 tape__WEBPACK_IMPORTED_MODULE_0___default()("Reverse utf16 sequence (from: \"\uD83D\uDC76\", to: \"\uD83D\uDC70\")", function (t) {
@@ -27825,12 +28006,169 @@ tape__WEBPACK_IMPORTED_MODULE_0___default()("Use as iterator", function (t) {
   }, 5)), [1, 2, 3, 4, 5]);
   t.end();
 });
+tape__WEBPACK_IMPORTED_MODULE_0___default()("Async iterator and for-await-of loop",
+/*#__PURE__*/
+function () {
+  var _ref = _asyncToGenerator(
+  /*#__PURE__*/
+  regeneratorRuntime.mark(function _callee2(t) {
+    var timeout, iter, result, _iteratorNormalCompletion, _didIteratorError, _iteratorError, _iterator, _step, _value, val;
+
+    return regeneratorRuntime.wrap(function _callee2$(_context2) {
+      while (1) {
+        switch (_context2.prev = _context2.next) {
+          case 0:
+            t.timeoutAfter(3000);
+
+            timeout = function timeout(cb, time) {
+              return new Promise(function (resolve) {
+                return setTimeout(function () {
+                  return resolve(cb());
+                }, time);
+              });
+            };
+
+            iter = Object(sqnc__WEBPACK_IMPORTED_MODULE_2__["default"])(
+            /*#__PURE__*/
+            function () {
+              var _ref2 = _asyncToGenerator(
+              /*#__PURE__*/
+              regeneratorRuntime.mark(function _callee(idx) {
+                return regeneratorRuntime.wrap(function _callee$(_context) {
+                  while (1) {
+                    switch (_context.prev = _context.next) {
+                      case 0:
+                        return _context.abrupt("return", timeout(function () {
+                          return "--".concat(idx);
+                        }, 100));
+
+                      case 1:
+                      case "end":
+                        return _context.stop();
+                    }
+                  }
+                }, _callee, this);
+              }));
+
+              return function (_x2) {
+                return _ref2.apply(this, arguments);
+              };
+            }(), 3);
+            result = "";
+            _iteratorNormalCompletion = true;
+            _didIteratorError = false;
+            _context2.prev = 6;
+            _iterator = _asyncIterator(iter);
+
+          case 8:
+            _context2.next = 10;
+            return _iterator.next();
+
+          case 10:
+            _step = _context2.sent;
+            _iteratorNormalCompletion = _step.done;
+            _context2.next = 14;
+            return _step.value;
+
+          case 14:
+            _value = _context2.sent;
+
+            if (_iteratorNormalCompletion) {
+              _context2.next = 21;
+              break;
+            }
+
+            val = _value;
+            result += val;
+
+          case 18:
+            _iteratorNormalCompletion = true;
+            _context2.next = 8;
+            break;
+
+          case 21:
+            _context2.next = 27;
+            break;
+
+          case 23:
+            _context2.prev = 23;
+            _context2.t0 = _context2["catch"](6);
+            _didIteratorError = true;
+            _iteratorError = _context2.t0;
+
+          case 27:
+            _context2.prev = 27;
+            _context2.prev = 28;
+
+            if (!(!_iteratorNormalCompletion && _iterator.return != null)) {
+              _context2.next = 32;
+              break;
+            }
+
+            _context2.next = 32;
+            return _iterator.return();
+
+          case 32:
+            _context2.prev = 32;
+
+            if (!_didIteratorError) {
+              _context2.next = 35;
+              break;
+            }
+
+            throw _iteratorError;
+
+          case 35:
+            return _context2.finish(32);
+
+          case 36:
+            return _context2.finish(27);
+
+          case 37:
+            t.equal("--0--1--2", result);
+            t.end();
+
+          case 39:
+          case "end":
+            return _context2.stop();
+        }
+      }
+    }, _callee2, this, [[6, 23, 27, 37], [28,, 32, 36]]);
+  }));
+
+  return function (_x) {
+    return _ref.apply(this, arguments);
+  };
+}());
 tape__WEBPACK_IMPORTED_MODULE_0___default()("Use as infinite iterator", function (t) {
   t.deepEqual(_toConsumableArray(Object(sqnc__WEBPACK_IMPORTED_MODULE_2__["default"])({
     fn: function fn(idx) {
       return idx + 1;
     }
+  }).count(5)), [1, 2, 3, 4, 5]);
+  t.deepEqual(_toConsumableArray(Object(sqnc__WEBPACK_IMPORTED_MODULE_2__["default"])({
+    fn: function fn(idx) {
+      return idx + 1;
+    }
   }).toArray(5)), [1, 2, 3, 4, 5]);
+  t.end();
+});
+tape__WEBPACK_IMPORTED_MODULE_0___default()("Function based sequence", function (t) {
+  t.deepEqual(_toConsumableArray(Object(sqnc__WEBPACK_IMPORTED_MODULE_2__["default"])({
+    fn: function fn(idx, data) {
+      var result = data.current;
+      var _ref3 = [data.next, data.current + data.next];
+      data.current = _ref3[0];
+      data.next = _ref3[1];
+      return result;
+    },
+    init: function init() {
+      return {
+        current: 0,
+        next: 1
+      };
+    }
+  }).count(10)), [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]);
   t.end();
 });
 tape__WEBPACK_IMPORTED_MODULE_0___default()("Custom filler with toArray count", function (t) {
@@ -27839,6 +28177,15 @@ tape__WEBPACK_IMPORTED_MODULE_0___default()("Custom filler with toArray count", 
       return "item".concat(idx + 1);
     }
   }).toArray(5), ["item1", "item2", "item3", "item4", "item5"]);
+  t.end();
+});
+tape__WEBPACK_IMPORTED_MODULE_0___default()("Utils", function (t) {
+  var utf16array = sqnc__WEBPACK_IMPORTED_MODULE_2__["default"].utils.stringToUTF16Array("👰");
+  t.deepEqual(sqnc__WEBPACK_IMPORTED_MODULE_2__["default"].utils.delta("👰", "👶"), 7);
+  t.deepEqual(sqnc__WEBPACK_IMPORTED_MODULE_2__["default"].utils.decToUTF16Array(sqnc__WEBPACK_IMPORTED_MODULE_2__["default"].utils.utf16ArrayToDec(utf16array)), utf16array);
+  t.deepEqual(sqnc__WEBPACK_IMPORTED_MODULE_2__["default"].utils.decToUTF16Array(256 * 256), [1, 0]);
+  t.equal(sqnc__WEBPACK_IMPORTED_MODULE_2__["default"].utils.inc(1), 2);
+  t.equal(sqnc__WEBPACK_IMPORTED_MODULE_2__["default"].utils.inc(1, -1), 0);
   t.end();
 }); // test(`Invalid data`, t => {
 // 	t.throws(() => sqnc(Infinity, 5));
@@ -27857,16 +28204,6 @@ tape__WEBPACK_IMPORTED_MODULE_0___default()("Custom filler with toArray count", 
 // 	t.deepEqual(sqnc(3), []);
 // 	t.end();
 // });
-
-tape__WEBPACK_IMPORTED_MODULE_0___default()("Utils", function (t) {
-  var utf16array = sqnc__WEBPACK_IMPORTED_MODULE_2__["default"].utils.StringToUTF16Array("👰");
-  t.deepEqual(sqnc__WEBPACK_IMPORTED_MODULE_2__["default"].utils.delta("👰", "👶"), 7);
-  t.deepEqual(sqnc__WEBPACK_IMPORTED_MODULE_2__["default"].utils.DecToUTF16Array(sqnc__WEBPACK_IMPORTED_MODULE_2__["default"].utils.UTF16ArrayToDec(utf16array)), utf16array);
-  t.deepEqual(sqnc__WEBPACK_IMPORTED_MODULE_2__["default"].utils.DecToUTF16Array(256 * 256), [1, 0]);
-  t.equal(sqnc__WEBPACK_IMPORTED_MODULE_2__["default"].utils.inc(1), 2);
-  t.equal(sqnc__WEBPACK_IMPORTED_MODULE_2__["default"].utils.inc(1, -1), 0);
-  t.end();
-});
 
 /***/ }),
 
