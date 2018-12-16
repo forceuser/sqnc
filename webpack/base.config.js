@@ -24,6 +24,7 @@ module.exports = (env = {}) => {
 			libraryExport: "default",
 			libraryTarget: "umd",
 			publicPath: `/js/`,
+			globalObject: "typeof self !== 'undefined' ? self : this",
 		},
 		resolve: {
 			alias: alias,
