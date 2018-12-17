@@ -12,12 +12,12 @@ npm i sqnc --save
 
 #### Or simply download \*.js file
 
-sqnc@2.0.13 minified file: [sqnc.js](https://github.com/forceuser/sqnc/releases/download/2.0.13/sqnc.js)
+sqnc@2.0.14 minified file: [sqnc.js](https://github.com/forceuser/sqnc/releases/download/2.0.14/sqnc.js)
 
 #### Or just load from CDN
 
 ```html
-<script src="//cdn.rawgit.com/forceuser/sqnc/2.0.13/dist/js/sqnc.js">
+<script src="//cdn.rawgit.com/forceuser/sqnc/2.0.14/dist/js/sqnc.js">
 </script>
 ```
 
@@ -36,11 +36,9 @@ Run example with [runkit](https://npm.runkit.com/sqnc)
 ```js
 const sqnc = require("sqnc");
 
-console.log(sqnc("A", "Z")); // Alphabet
-console.log(sqnc("👶", "👰")); // Some emojis
-console.log(sqnc(25, 0, 5)); // From 25 to 0 with step 5
-console.log(sqnc("☠", null, null, 5)); // Make Array(5) of Skull and bones symbol
-console.log(sqnc(n => Math.pow(2, n), 10)); // Power of 2 sequence
-console.log(sqnc((n, v, r) => n > 1 ? r[n - 1] + r[n - 2] : 1, 20)); // Fibonacci number sequence
-console.log(sqnc(1, 20, n => n % 2 ? 1 : 2)); // Using step function
+console.log(sqnc("A", "Z").toArray()); // Alphabet
+console.log(sqnc("👶", "👰").toArray()); // Some emojis
+console.log(sqnc(25, 0, 5).toArray()); // From 25 to 0 with step 5
+console.log(sqnc("☠").toArray(5)); // Make Array(5) of Skull and bones symbol
+
 ```
