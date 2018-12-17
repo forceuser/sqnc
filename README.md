@@ -12,12 +12,12 @@ npm i sqnc --save
 
 #### Or simply download \*.js file
 
-sqnc@2.0.14 minified file: [sqnc.js](https://github.com/forceuser/sqnc/releases/download/2.0.14/sqnc.js)
+sqnc@2.0.15 minified file: [sqnc.js](https://github.com/forceuser/sqnc/releases/download/2.0.15/sqnc.js)
 
 #### Or just load from CDN
 
 ```html
-<script src="//cdn.rawgit.com/forceuser/sqnc/2.0.14/dist/js/sqnc.js">
+<script src="//cdn.rawgit.com/forceuser/sqnc/2.0.15/dist/js/sqnc.js">
 </script>
 ```
 

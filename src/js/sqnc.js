@@ -62,7 +62,7 @@ function inc (val, count = 1) {
 class SqncIterator {
 	constructor (...args) {
 		let options;
-		if (typeof args[0] === "object") {
+		if (typeof args[0] === "object" && args[0] != null) {
 			options = args[0];
 		}
 		else if (typeof args[0] === "function") {
