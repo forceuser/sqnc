@@ -5,25 +5,16 @@ const pkg = require("../package.json");
 const ma = pkg._moduleAliases || {};
 const alias = Object.keys(ma).reduce((acc, key) => (acc[key] = path.resolve(__dirname, "../", ma[key])  , acc), {});
 
-
-
 module.exports = (env = {}) => {
-	function entry (name) {
-		return [
-			"@babel/polyfill",
-			`./src/js/${name}.js`,
-		];
-	}
-
 	return ({
-		entry: ["sqnc"].reduce((acc, name) => (acc[name] = entry(name), acc), {}),
+		entry: `./src/sqnc.js`,
 		output: {
-			path: path.resolve(__dirname, "../dist/js"),
-			filename: "[name].js",
-			library: "[name]",
+			path: path.resolve(__dirname, "../dist/"),
+			filename: "sqnc.js",
+			library: "sqnc",
 			libraryExport: "default",
 			libraryTarget: "umd",
-			publicPath: `/js/`,
+			// publicPath: `/js/`,
 			globalObject: "typeof self !== 'undefined' ? self : this",
 		},
 		resolve: {
@@ -32,17 +23,17 @@ module.exports = (env = {}) => {
 		devtool: "source-map",
 		module: {
 			rules: [
-				{
-					test: /\.(js|mjs)$/,
-					exclude: /(node_modules)/,
-					use: [{
-						loader: "babel-loader",
-						options: {
-							babelrc: true,
-							// envName: "browser",
-						},
-					}],
-				},
+				// {
+				// 	test: /\.(js|mjs)$/,
+				// 	exclude: /(node_modules)/,
+				// 	use: [{
+				// 		loader: "babel-loader",
+				// 		options: {
+				// 			babelrc: true,
+				// 			// envName: "browser",
+				// 		},
+				// 	}],
+				// },
 				{
 					test: /(\.html|\.txt)$/,
 					use: [

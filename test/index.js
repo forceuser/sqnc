@@ -71,7 +71,7 @@ test(`Async iterator and for-await-of loop`, async t => {
 });
 
 test(`Use as infinite iterator`, t => {
-	t.deepEqual([...sqnc({fn: idx => idx + 1}).count(5)], [1, 2, 3, 4, 5]);
+	t.deepEqual([...sqnc({fn: idx => idx + 1}).instance(5)], [1, 2, 3, 4, 5]);
 	t.deepEqual([...sqnc({fn: idx => idx + 1}).toArray(5)], [1, 2, 3, 4, 5]);
 	t.end();
 });
@@ -87,7 +87,7 @@ test(`Function based sequence`, t => {
 				},
 				init: () => ({current: 0, next: 1}),
 			})
-				.count(10),
+				.instance(10),
 		],
 		[0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
 	);
@@ -101,9 +101,16 @@ test(`Custom filler with toArray count`, t => {
 	t.end();
 });
 
+test(`Clone instance`, t => {
+	const it = sqnc({fn: idx => `item${idx + 1}`, count: 5});
+	t.deepEqual([...it], ["item1", "item2", "item3", "item4", "item5"]);
+	t.deepEqual([...it], []);
+	t.deepEqual([...it.instance()], ["item1", "item2", "item3", "item4", "item5"]);
+	t.end();
+});
+
 
 test(`Utils`, t => {
-
 	const utf16array = sqnc.utils.stringToUTF16Array("👰");
 	t.deepEqual(sqnc.utils.delta("👰", "👶"), 7);
 	t.deepEqual(sqnc.utils.decToUTF16Array(sqnc.utils.utf16ArrayToDec(utf16array)), utf16array);
@@ -113,20 +120,16 @@ test(`Utils`, t => {
 	t.end();
 });
 
-// test(`Invalid data`, t => {
-// 	t.throws(() => sqnc(Infinity, 5));
-// 	t.throws(() => sqnc(10, NaN));
-// 	t.throws(() => sqnc(1, null, null, 0));
-// 	t.throws(() => sqnc(1, null, null, NaN));
-// 	t.throws(() => sqnc("a", "z", 1.5));
-// 	let warnMessage;
-// 	sinon.stub(console, "warn", message => warnMessage = message);
-// 	t.throws(() => sqnc(false, "z", 1, 5));
-// 	t.equal(warnMessage, `"count" argument is ignored when "to" argument is specified`);
-// 	t.throws(() => sqnc(1, 5, 0));
-// 	t.throws(() => sqnc(false, null, 1, 5));
-// 	t.throws(() => sqnc(0, sqnc.maxLength + 1));
-// 	t.throws(() => sqnc(0, null, null, sqnc.maxLength + 1));
-// 	t.deepEqual(sqnc(3), []);
-// 	t.end();
-// });
+
+
+test(`Test without iterator support`, t => {
+	sqnc.setIteratorSupport(false);
+	// ======
+	t.deepEqual(sqnc({from: 1, to: 10}).toArray(), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+	t.deepEqual(sqnc({from: 10, to: 1}).toArray(), [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]);
+	t.deepEqual(sqnc({from: "👰", to: "👶"}).toArray(), ["👰", "👱", "👲", "👳", "👴", "👵", "👶"]);
+	t.deepEqual(sqnc({from: "\u2648"}).toArray(12), ["♈", "♉", "♊", "♋", "♌", "♍", "♎", "♏", "♐", "♑", "♒", "♓"]);
+	// ======
+	sqnc.setIteratorSupport();
+	t.end();
+});
