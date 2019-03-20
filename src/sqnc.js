@@ -162,7 +162,10 @@ function SqncIterator (arg0, arg1, arg2, arg3) {
 			if (idx === 0) {
 				fnState = typeof init === "function" ? init() : {};
 			}
-			state = {done: false, value: fn(idx, fnState, endCallback)};
+			var value = fn(idx, fnState, endCallback);
+			if (!state.done) {
+				state = {done: false, value: value};
+			}
 		};
 	}
 	else {

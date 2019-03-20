@@ -12,12 +12,12 @@ npm i sqnc --save
 
 #### Or simply download \*.js file
 
-[sqnc.js@3.0.0](https://github.com/forceuser/sqnc/releases/download/3.0.0/sqnc.js)
+[sqnc.js@3.0.1](https://github.com/forceuser/sqnc/releases/download/3.0.1/sqnc.js)
 
 #### Or just load from CDN
 
 ```html
-<script src="//cdn.jsdelivr.net/npm/sqnc@3.0.0/dist/sqnc.js" integrity="sha512-2IzdOfOr18a4/mj67puvKNoG6TJh0VL0zCcaQhZO1L3b7x8vFF2LuFcq+qNhmFNG76E4sN/WJoeAY5ao7aT4gg==" crossorigin="anonymous">
+<script src="//cdn.jsdelivr.net/npm/sqnc@3.0.1/dist/sqnc.js" integrity="sha512-uYn764mmdPVo19F0xYJT5IWVSZKRC+++ighqsa2zOb6ryRViHkuQI+/gGy/g9Mw8Tm9v/feAQnnZb/zyh+l9kg==" crossorigin="anonymous">
 </script>
 ```
 

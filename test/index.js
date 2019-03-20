@@ -34,6 +34,12 @@ test(`Reverse utf16 sequence (from: "👶", to: "👰")`, t => {
 	t.end();
 });
 
+test(`fill with "👶"`, t => {
+	t.deepEqual(sqnc("👶").toArray(5), ["👶", "👶", "👶", "👶", "👶"]);
+	t.end();
+});
+
+
 test(`Custom step`, t => {
 	t.deepEqual(sqnc("👶", null, 2).toArray(5), ["👶", "👸", "👺", "👼", "👾"]);
 	t.deepEqual(sqnc({from: "👶", step: 2, count: 5}).toArray(), ["👶", "👸", "👺", "👼", "👾"]);
@@ -92,6 +98,24 @@ test(`Function based sequence`, t => {
 		[0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
 	);
 
+	t.end();
+});
+
+test(`Function based sequence with end callback`, t => {
+	t.deepEqual(
+		[
+			...sqnc({
+				fn: (idx, data, end) => {
+					if (idx > 4) {
+						end();
+					}
+					return "test";
+				},
+			})
+				.instance(10),
+		],
+		["test", "test", "test", "test", "test"]
+	);
 	t.end();
 });
 
