@@ -1,6 +1,6 @@
 {
 	"name": "sqnc",
-	"version": "3.0.1",
+	"version": "3.0.2",
 	"description": "Numeric and symbolic sequence generator, with iterators and utf16 support",
 	"main": "dist/sqnc.js",
 	"module": "src/sqnc.js",
@@ -26,7 +26,7 @@
 		"analyse-build": "NODE_ENV=production BABEL_ENV=production webpack --config ./webpack/production.config.js --profile",
 		"analyse-build-2": "webpack-bundle-analyzer ./webpack/analyse.json ./dist/",
 		"build-templates": "va-release -t",
-		"release": "npm run release-patch --",
+		"release": "npm run release-patch",
 		"release-patch": "npm test && npm run build && npm run documentation && va-release --version patch",
 		"release-minor": "npm test && npm run build && npm run documentation && va-release --version minor",
 		"release-major": "npm test && npm run build && npm run documentation && va-release --version major"
@@ -41,7 +41,8 @@
 				],
 				"dest": "./"
 			}
-		]
+		],
+		"library": "sqnc"
 	},
 	"repository": {
 		"type": "git",
@@ -64,7 +65,6 @@
 	"homepage": "https://github.com/forceuser/sqnc#readme",
 	"dependencies": {},
 	"devDependencies": {
-		"jsdoc-to-markdown": "^4.0.1",
 		"@babel/core": "^7.1.0",
 		"@babel/plugin-proposal-object-rest-spread": "^7.0.0",
 		"@babel/plugin-proposal-optional-chaining": "^7.0.0",
@@ -95,6 +95,7 @@
 		"inject-loader": "^4.0.1",
 		"is-glob": "^4.0.0",
 		"is-wsl": "^1.1.0",
+		"jsdoc-to-markdown": "^4.0.1",
 		"module-alias": "^2.1.0",
 		"npm-run-all": "^4.1.3",
 		"nyc": "^13.1.0",
@@ -104,7 +105,7 @@
 		"terser-webpack-plugin": "^1.2.2",
 		"uglifyjs-webpack-plugin": "^2.0.1",
 		"universal-url": "^2.0.0",
-		"va-release": "^1.0.34",
+		"va-release": "^1.1.14",
 		"webpack": "4.29.5",
 		"webpack-bundle-analyzer": "^3.0.3",
 		"webpack-cli": "3.2.3",

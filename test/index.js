@@ -72,7 +72,30 @@ test(`Async iterator and for-await-of loop`, async t => {
 	for await (const val of iter) {
 		result += val;
 	}
-	t.equal("--0--1--2", result);
+	t.equal(result, "--0--1--2");
+	t.end();
+});
+
+test(`Async iterator and for-await-of loop 2`, async t => {
+	t.timeoutAfter(3000);
+	const timeout = (cb, time) => new Promise(resolve => setTimeout(() => resolve(cb()), time));
+	const iter = sqnc(async (idx, state, done) => {
+		if (idx === 4) {
+			return timeout(() => {
+				done();
+				return "--end";
+			}, 100);
+		}
+		else {
+			return timeout(() => `--${idx}`, 100);
+		}
+	});
+
+	let result = "";
+	for await (const val of iter) {
+		result += val;
+	}
+	t.equal(result, "--0--1--2--3");
 	t.end();
 });
 
@@ -148,6 +171,7 @@ test(`Utils`, t => {
 
 test(`Test without iterator support`, t => {
 	sqnc.setIteratorSupport(false);
+	sqnc.setAsyncIteratorSupport(false);
 	// ======
 	t.deepEqual(sqnc({from: 1, to: 10}).toArray(), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 	t.deepEqual(sqnc({from: 10, to: 1}).toArray(), [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]);

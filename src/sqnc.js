@@ -2,6 +2,7 @@
 var UTF16MAX = 65536;
 
 var iteratorSupport = typeof Symbol === "function" && "iterator" in Symbol;
+var asyncIteratorSupport = typeof Symbol === "function" && "asyncIterator" in Symbol;
 
 function stringToUTF16Array (val) {
 	return val.split("").map(function (c) {
@@ -85,6 +86,14 @@ function SqncIterator (arg0, arg1, arg2, arg3) {
 		};
 	}
 
+	if (asyncIteratorSupport) {
+		iterator[Symbol.asyncIterator] = function () {
+			return {
+				next: iterator.nextAsync
+			};
+		};
+	}
+
 	var options;
 	if (typeof arg0 === "object" && arg0 != null) {
 		options = arg0;
@@ -145,7 +154,7 @@ function SqncIterator (arg0, arg1, arg2, arg3) {
 
 	var idx = 0;
 	var val = from;
-	var state = {done: false};
+	var state = {};
 	var nextIteration;
 
 	if ("fill" in options) {
@@ -158,14 +167,19 @@ function SqncIterator (arg0, arg1, arg2, arg3) {
 		var endCallback = function () {
 			state = {done: true};
 		};
-		nextIteration = function () {
+		nextIteration = function (isAsync) {
+			state = {done: false};
 			if (idx === 0) {
 				fnState = typeof init === "function" ? init() : {};
 			}
 			var value = fn(idx, fnState, endCallback);
-			if (!state.done) {
-				state = {done: false, value: value};
+			if (isAsync) {
+				return Promise.resolve(value).then(function (value) {
+					state.value = value;
+					return state;
+				});
 			}
+			state.value = value;
 		};
 	}
 	else {
@@ -183,13 +197,29 @@ function SqncIterator (arg0, arg1, arg2, arg3) {
 		return new iterator.constructor(options);
 	};
 
+	iterator.nextAsync = function () {
+		return Promise.resolve(nextIteration(true)).then(function (state) {
+			if (!state.done) {
+				if (count == null || idx < count) {
+					idx++;
+				}
+				else {
+					state = {done: true};
+				}
+			}
+			return state;
+		});
+	};
+
 	iterator.next = function () {
-		if (!state.done && (count == null || idx < count)) {
-			nextIteration();
-			idx++;
-		}
-		else {
-			state = {done: true};
+		if (!state.done) {
+			if (count == null || idx < count) {
+				nextIteration();
+				idx++;
+			}
+			else {
+				state = {done: true};
+			}
 		}
 		return state;
 	};
@@ -266,6 +296,15 @@ if (process && process.env.NODE_ENV === "test") {
 		}
 		else {
 			iteratorSupport = val;
+		}
+	};
+
+	sqnc.setAsyncIteratorSupport = function (val) {
+		if (val == null) {
+			asyncIteratorSupport = typeof Symbol === "function" && "asyncIterator" in Symbol;
+		}
+		else {
+			asyncIteratorSupport = val;
 		}
 	};
 }
