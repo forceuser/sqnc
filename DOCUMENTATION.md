@@ -103,7 +103,7 @@ Iterator created by [sqnc](#sqnc) function
 * [SqncIterator](#SqncIterator) : <code>Object</code>
     * [.next()](#SqncIterator+next) ⇒ [<code>IteratorState</code>](#IteratorState)
     * [.instance([count])](#SqncIterator+instance) ⇒ [<code>SqncIterator</code>](#SqncIterator)
-    * [.toArray([count])](#SqncIterator+toArray) ⇒ <code>[ &#x27;Array&#x27; ].&lt;\*&gt;</code>
+    * [.toArray([count])](#SqncIterator+toArray) ⇒ <code>Array.&lt;\*&gt;</code>
 
 <a name="SqncIterator+next"></a>
 
@@ -124,7 +124,7 @@ Create [SqncIterator](#SqncIterator) with the same [SqncOptions](#SqncOptions) a
 
 <a name="SqncIterator+toArray"></a>
 
-### sqncIterator.toArray([count]) ⇒ <code>[ &#x27;Array&#x27; ].&lt;\*&gt;</code>
+### sqncIterator.toArray([count]) ⇒ <code>Array.&lt;\*&gt;</code>
 convert sequence to [Array](Array)
 
 **Kind**: instance method of [<code>SqncIterator</code>](#SqncIterator)  

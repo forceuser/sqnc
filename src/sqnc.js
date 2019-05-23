@@ -289,7 +289,7 @@ sqnc.utils = {
 };
 
 /* istanbul ignore next */
-if (process && process.env.NODE_ENV === "test") {
+if (typeof process !== "undefined" && process.env.NODE_ENV === "test") {
 	sqnc.setIteratorSupport = function (val) {
 		if (val == null) {
 			iteratorSupport = typeof Symbol === "function" && "iterator" in Symbol;
