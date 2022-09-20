@@ -1,21 +1,28 @@
-/* global __dirname */
-const path = require("path");
-const merge = require("webpack-merge");
-const baseConfig = require("./base.config.js");
+const {merge} = require("webpack-merge");
+const baseConfig = require("./base.config.cjs");
 const webpack = require("webpack");
-const isWSL = require("is-wsl");
 const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = (env = {}) => {
 	const result = merge(baseConfig(env), {
 		mode: "production",
+		devtool: "source-map",
 		optimization: {
 			minimizer: [
 				new TerserPlugin({
-					sourceMap: true,
+					terserOptions: {
+						compress: {
+							drop_console: true,
+						},
+					},
 				}),
 			]
 		},
+		plugins: [
+			new webpack.optimize.LimitChunkCountPlugin({
+				maxChunks: 1,
+			}),
+		],
 	});
 	// result.plugins.push(new webpack.optimize.MinChunkSizePlugin({minChunkSize: 100000}));
 

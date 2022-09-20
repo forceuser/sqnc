@@ -1,10 +1,7 @@
 /* global __dirname */
 const path = require("path");
 const merge = require("webpack-merge");
-const baseConfig = require("./base.config.js");
-const webpack = require("webpack");
-const isWSL = require("is-wsl");
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const baseConfig = require("./base.config.cjs");
 
 module.exports = (env = {}) => {
 	const result = merge(baseConfig(env), {

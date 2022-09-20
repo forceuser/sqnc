@@ -1,0 +1,12 @@
+{
+    "include": [
+        "src/*.js"
+    ],
+    "compilerOptions": {
+        "declaration": true,
+        "allowJs": true,
+		"noEmit": false,
+		"module": "commonjs",
+		"outDir": "dist"
+    }
+}

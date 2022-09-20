@@ -1,6 +1,6 @@
 import test from "tape";
 import sinon from "sinon";
-import sqnc from "sqnc";
+import sqnc from "../src/sqnc.js";
 
 test(`Straight numeric sequence (from: 1, to: 10)`, t => {
 	t.deepEqual(sqnc({from: 1, to: 10}).toArray(), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);

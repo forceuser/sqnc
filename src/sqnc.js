@@ -1,11 +1,11 @@
 /* global process */
-var UTF16MAX = 65536;
+const UTF16MAX = 65536;
 
-var iteratorSupport = typeof Symbol === "function" && "iterator" in Symbol;
-var asyncIteratorSupport = typeof Symbol === "function" && "asyncIterator" in Symbol;
+let iteratorSupport = typeof Symbol === "function" && "iterator" in Symbol;
+let asyncIteratorSupport = typeof Symbol === "function" && "asyncIterator" in Symbol;
 
 function stringToUTF16Array (val) {
-	return val.split("").map(function (c) {
+	return val.split("").map((c) => {
 		return c.charCodeAt(0);
 	});
 }
@@ -15,9 +15,9 @@ function utf16ArrayToString (val) {
 }
 
 function utf16ArrayToDec (val) {
-	var res = 0;
-	var n = 0;
-	for (var i = val.length - 1; i >= 0; i--) {
+	let res = 0;
+	let n = 0;
+	for (let i = val.length - 1; i >= 0; i--) {
 		res += val[i] * Math.pow(UTF16MAX, n);
 		n++;
 	}
@@ -25,8 +25,8 @@ function utf16ArrayToDec (val) {
 }
 
 function decToUTF16Array (val) {
-	var res = [];
-	var p;
+	let res = [];
+	let p;
 	while (val) {
 		p = val % UTF16MAX;
 		res.unshift(p);
@@ -68,8 +68,8 @@ function inc (val, count) {
 }
 
 function iterableToArray (iterable) {
-	var result = [];
-	var state = iterable.next();
+	let result = [];
+	let state = iterable.next();
 	while (!state.done) {
 		result.push(state.value);
 		state = iterable.next();
@@ -78,7 +78,7 @@ function iterableToArray (iterable) {
 }
 
 function SqncIterator (arg0, arg1, arg2, arg3) {
-	var iterator = this;
+	let iterator = this;
 
 	if (iteratorSupport) {
 		iterator[Symbol.iterator] = function () {
@@ -89,12 +89,12 @@ function SqncIterator (arg0, arg1, arg2, arg3) {
 	if (asyncIteratorSupport) {
 		iterator[Symbol.asyncIterator] = function () {
 			return {
-				next: iterator.nextAsync
+				next: iterator.nextAsync,
 			};
 		};
 	}
 
-	var options;
+	let options;
 	if (typeof arg0 === "object" && arg0 != null) {
 		options = arg0;
 	}
@@ -108,14 +108,14 @@ function SqncIterator (arg0, arg1, arg2, arg3) {
 		options = {from: arg0, to: arg1, step: arg2, count: arg3};
 	}
 
-	var from = options.from == null ? 0 : options.from;
-	var to = options.to;
-	var step = options.step == null ? 1 : options.step;
-	var count = options.count;
-	var fn = options.fn;
-	var init = options.init;
+	let from = options.from == null ? 0 : options.from;
+	let to = options.to;
+	let step = options.step == null ? 1 : options.step;
+	let count = options.count;
+	let fn = options.fn;
+	let init = options.init;
 
-	var chars = options.chars || false;
+	let chars = options.chars || false;
 
 	if (typeof from === "string") {
 		from = stringToUTF16Array(from);
@@ -133,18 +133,18 @@ function SqncIterator (arg0, arg1, arg2, arg3) {
 	Object.defineProperty(iterator, "length", {
 		get () {
 			return count;
-		}
+		},
 	});
 
 	function cloneOptions () {
-		var opt = {
-			from: from,
-			to: to,
-			step: step,
-			count: count,
-			fn: fn,
-			init: init,
-			chars: chars
+		let opt = {
+			from,
+			to,
+			step,
+			count,
+			fn,
+			init,
+			chars,
 		};
 		if ("fill" in options) {
 			opt.fill = options.fill;
@@ -152,10 +152,10 @@ function SqncIterator (arg0, arg1, arg2, arg3) {
 		return opt;
 	}
 
-	var idx = 0;
-	var val = from;
-	var state = {};
-	var nextIteration;
+	let idx = 0;
+	let val = from;
+	let state = {};
+	let nextIteration;
 
 	if ("fill" in options) {
 		nextIteration = function () {
@@ -163,8 +163,8 @@ function SqncIterator (arg0, arg1, arg2, arg3) {
 		};
 	}
 	else if (typeof fn === "function") {
-		var fnState;
-		var endCallback = function () {
+		let fnState;
+		let endCallback = function () {
 			state = {done: true};
 		};
 		nextIteration = function (isAsync) {
@@ -172,9 +172,9 @@ function SqncIterator (arg0, arg1, arg2, arg3) {
 			if (idx === 0) {
 				fnState = typeof init === "function" ? init() : {};
 			}
-			var value = fn(idx, fnState, endCallback);
+			let value = fn(idx, fnState, endCallback);
 			if (isAsync) {
-				return Promise.resolve(value).then(function (value) {
+				return Promise.resolve(value).then((value) => {
 					state.value = value;
 					return state;
 				});
@@ -190,7 +190,7 @@ function SqncIterator (arg0, arg1, arg2, arg3) {
 	}
 
 	iterator.instance = function (count) {
-		var options = cloneOptions();
+		let options = cloneOptions();
 		if (count != null) {
 			options.count = count;
 		}
@@ -198,7 +198,7 @@ function SqncIterator (arg0, arg1, arg2, arg3) {
 	};
 
 	iterator.nextAsync = function () {
-		return Promise.resolve(nextIteration(true)).then(function (state) {
+		return Promise.resolve(nextIteration(true)).then((state) => {
 			if (!state.done) {
 				if (count == null || idx < count) {
 					idx++;
@@ -233,7 +233,7 @@ SqncIterator.prototype.toArray = function (count) {
 		throw Error("Can't cast to an Array: Infinite iterable");
 	}
 	if (typeof Array.from === "function" && iteratorSupport) {
-		var iter = this.instance(count);
+		let iter = this.instance(count);
 		return Array.from(iter);
 	}
 	return iterableToArray(this.instance(count));
@@ -241,30 +241,30 @@ SqncIterator.prototype.toArray = function (count) {
 
 
 /**
- * @name sqnc
  * @function
+ * @name sqnc
  * @description Create sequence iterator with set of options
  * @param {SqncOptions} options - sequence options
  * @returns {SqncIterator} iterator
  */
 /**
- * @name sqnc
  * @function
+ * @name sqnc
  * @description Create {@link SqncIterator} that will return only one value for each iteration specified by {@link fill} param
  * @param {number|string} fill - value that will be returned by every iteration of iterator
  * @returns {SqncIterator} iterator
  */
 /**
- * @name sqnc
  * @function
+ * @name sqnc
  * @description Create sequence iterator with generation function
  * @param {SqncGenFunction} fn - sequence generation function
  * @param {number} [count] - limit iterations count
  * @returns {SqncIterator} iterator
  */
 /**
- * @name sqnc
  * @function
+ * @name sqnc
  * @description Create sequence iterator with range of values
  * @param {(number|string)} from - first value within iteration range
  * @param {(number|string)} to - value to limit iteration range
@@ -272,7 +272,6 @@ SqncIterator.prototype.toArray = function (count) {
  * @param {number} [count] - limit iterations count
  * @returns {SqncIterator} iterator
  */
-
 function sqnc (arg0, arg1, arg2, arg3) {
 	return new SqncIterator(arg0, arg1, arg2, arg3);
 }
@@ -285,7 +284,7 @@ sqnc.utils = {
 	stringToUTF16Array,
 	utf16ArrayToString,
 	decToUTF16Array,
-	utf16ArrayToDec
+	utf16ArrayToDec,
 };
 
 /* istanbul ignore next */
@@ -314,9 +313,9 @@ export default sqnc;
 
 /**
  * @typedef
+ * @type {Object}
  * @name SqncIterator
  * @description Iterator created by {@link sqnc} function
- * @type {Object}
  */
 
 /**
@@ -345,8 +344,8 @@ export default sqnc;
 
 /**
  * @typedef
- * @name IteratorState
  * @type {Object}
+ * @name IteratorState
  * @description Object that describes current iterator state, check out {@link https://developer.mozilla.org/docs/Web/JavaScript/Reference/Iteration_protocols|Iterable protocol}
  * @property {boolean} done - is `true` if iterator is past the end of the iterated sequence.
  * @property {*} value - value returned by iterator for the current step
@@ -354,8 +353,8 @@ export default sqnc;
 
 /**
  * @typedef
- * @name SqncOptions
  * @type {Object}
+ * @name SqncOptions
  * @description Options to instantiate sequence interator, one of its groups of params will be used,
  * by priority:
  * - {@link fill} - value to fill the sequence

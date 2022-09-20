@@ -1,13 +1,18 @@
 module.exports = function (api) {
 	const config = {
 		"presets": [
-			["@babel/preset-env", {"modules": false, "useBuiltIns": "usage"}],
+			["@babel/preset-env"],
 		],
 		"plugins": [
-			"@babel/plugin-syntax-dynamic-import",
-			"@babel/plugin-syntax-import-meta",
+			["@babel/plugin-transform-runtime", {
+				"corejs": 3,
+			}],
 		],
+		env: {
+			production: {},
+		},
 	};
+
 	if (api.env(["test"])) {
 		Object.assign(config, {
 			generatorOpts: {
