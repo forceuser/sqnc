@@ -1,9 +1,15 @@
 {
 	"name": "sqnc",
-	"version": "3.0.6",
+	"version": "3.0.7",
 	"description": "Numeric and symbolic sequence generator, with iterators and utf16 support",
 	"main": "dist/sqnc.js",
 	"module": "src/sqnc.js",
+	"exports": {
+		".": {
+			"require": "./dist/sqnc.js",
+			"import": "./src/sqnc.js"
+		}
+	},
 	"type": "module",
 	"nyc": {
 		"temp-dir": "./coverage",
